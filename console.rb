@@ -3,21 +3,21 @@ require_relative "sequential.rb"
 require_relative "board_player.rb"
 
 class Console
-	#attr_accessor :board, :player, :player1, :player2, :currentplayer
+	attr_accessor :board, :player, :player1, :player2, :currentplayer
 
 	def initialize 
-		#@board = Board.new
-		#@player = Player.new("Player1", "Player2")
+		@board = Board.new
+		@player = Player.new("Player1", "Player2")
    
 	end
 
-	def display_board(board)  #drawing a board 
+	def display_board(board)  #display the whole tictactoe board 
 		puts "\n
-		    #{board[0]}  |  #{board[1]}  |  #{board[2]}\n
-		    -------------
-		    #{board[3]}  |  #{board[4]}  |  #{board[5]}\n
-		    -------------
-		    #{board[6]}  |  #{board[7]}  |  #{board[8]}\n\n"  
+		     #{board[0]}  |  #{board[1]}  |  #{board[2]}\n
+		     -------------
+		     #{board[3]}  |  #{board[4]}  |  #{board[5]}\n
+		     -------------
+		     #{board[6]}  |  #{board[7]}  |  #{board[8]}\n\n"  
     end 
     
 
@@ -30,7 +30,7 @@ class Console
     	end	
     end
     def get_move(move)
-    	#currentplayer.get_move(board)
+    	currentplayer.get_move(board)
 
     end
     def game_over?

@@ -17,5 +17,6 @@ end
 
 
 # random = Random.new
-# @board = ["x", "", "", "", "", "", "", "", ""]
-# move = random.get_move
+# board = Board.new
+# board = ["x", "o", "x", "o", "x", "o", "x", "o", ""]
+# move = random.get_move("x", 7)
