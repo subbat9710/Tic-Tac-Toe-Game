@@ -16,6 +16,17 @@ player2 = Player.new(name2, 'O')
 puts "Hey, #{name2} Your symbol is 'O'"
 sleep 1
 currentplayer = player1
+console = Console.new  #random = Random.new
+	console.display_board(board.board)
+	print "please enter your move: "
+	move = gets.chomp.to_i  
+	#move = random.move
+	board.set_position(move, "X")
+	console.display_board(board.board)
 
-until game_over?
-end
+# console = Console.new
+#     board = Board.new
+#     board.set_position(1, "x")
+#     #p board.board 
+
+#     console.display_board(board.board)

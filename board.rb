@@ -51,4 +51,6 @@ class Board
         end
     end
 end
-board = Board.new
+# board = Board.new
+# board.set_position(1,"x")
+# p board.board 

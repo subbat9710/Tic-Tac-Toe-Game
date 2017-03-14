@@ -3,22 +3,24 @@ require_relative "sequential.rb"
 require_relative "board_player.rb"
 
 class Console
-	attr_accessor :board, :player, :player1, :player2, :currentplayer
+	#attr_accessor :board, :player, :player1, :player2, :currentplayer
 
 	def initialize 
-		@board = Board.new
-		@player = Player.new("Player1", "Player2")
+		#@board = Board.new
+		#@player = Player.new("Player1", "Player2")
    
 	end
 
-	def display_board  #drawing a board 
+	def display_board(board)  #drawing a board 
 		puts "\n
-		    #{@board.board[0]}  |  #{@board.board[1]}  |  #{@board.board[2]}\n
+		    #{board[0]}  |  #{board[1]}  |  #{board[2]}\n
 		    -------------
-		    #{@board.board[3]}  |  #{@board.board[4]}  |  #{@board.board[5]}\n
+		    #{board[3]}  |  #{board[4]}  |  #{board[5]}\n
 		    -------------
-		    #{@board.board[6]}  |  #{@board.board[7]}  |  #{@board.board[8]}\n\n"  
+		    #{board[6]}  |  #{board[7]}  |  #{board[8]}\n\n"  
     end 
+    
+
 
     def switch_player(currentplayer)
     	if currentplayer == player.name1
@@ -27,8 +29,9 @@ class Console
     	   currentplayer = player.name1
     	end	
     end
-    def get_move
-    	currentplayer.get_move(board)
+    def get_move(move)
+    	#currentplayer.get_move(board)
+
     end
     def game_over?
     	board.stub_winner? || (stub_winner? == false && check_full? == true)
@@ -57,5 +60,9 @@ class Console
     #     end
     # end
 end
-    console = Console.new
-    console.display_board
+    # console = Console.new
+    # board = Board.new
+    # board.set_position(1, "x")
+    # #p board.board 
+
+    # console.display_board(board.board)
