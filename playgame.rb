@@ -1,52 +1,48 @@
 require_relative "board.rb"
-require_relative "sequential.rb"
 require_relative "console.rb"
+require_relative "sequential.rb"
+require_relative "board_player.rb"
 require_relative "random.rb"
 
 #to run the game
 board = Board.new
 puts 'Wellcome. Player1, what is your name?'
 name1 = gets.chomp
-player1 = Player.new(name1, 'X')
-puts "Hey, #{name1}. Your symbol is 'X'"
+player1 = Player.new(name1, 'x')
+puts "Hey, #{name1}. Your symbol is 'x'"
 sleep 1
 puts 'Player2, what is your name?'
 name2 = gets.chomp
-player2 = Player.new(name2, 'O')
-puts "Hey, #{name2} Your symbol is 'O'"
+player2 = Player.new(name2, 'o')
+puts "Hey, #{name2} Your symbol is 'o'"
 sleep 1
 currentplayer = player1
-console = Console.new  
+console = Console.new(board) 
 #random = Random.new
-while console.game_over?
+console.display_board(board.board) #this line display the board in the terminals.
+ while !console.game_over? 
+    print "#{name1}, enter your move: "
+ 	move = gets.chomp.to_i  
+	#move = random.move
+	board.set_position(move, "x")
 	console.display_board(board.board)
-	move = gets.chomp.to_i
-	board.set_position(move, "X")
-	if board.stub_winner?
-		console.display_board(board.board)
-		puts "#{name1} has won! Congratulations."
-    elsif console.switch_player(currentplayer)
-			puts "Better luck next time, #{name1}."
-    elsif board.tie
-        console.display_board(board.board)
-        puts "game is tie"
-    else console.switch_player(currentplayer)
+    sleep 1
+    #console.display_board(board.board)
+    if console.game_over?
+        break
     end
+    print "#{name2}, enter your move: " 
+    move = gets.chomp.to_i
+    board.set_position(move, "o")
+    console.display_board(board.board)
+    
+end
+    if board.winner_of_game = "x"
+      puts "#{name1}"
+  else 
+    puts "#{name2}"
 end
 
-
-# console.display_board(board.board) #this line display the board in the terminals.
- 	#print "#{name1}, enter your move: "
- 	#move = gets.chomp.to_i  
-# 	#move = random.move
-# 	board.set_position(move, "X")
-# 	console.display_board(board.board)
-#     sleep 1
-#     #console.display_board(board.board)
-#     print "#{name2}, enter your move: "
-#     move = gets.chomp.to_i
-#     board.set_position(move, "O")
-#     #console.display_board(board.board)
 
  # console = Console.new
  #     board = Board.new

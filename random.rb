@@ -14,8 +14,6 @@ class Random
 end
 
 
-
-
 # random = Random.new
 # board = Board.new
 # board = ["x", "o", "x", "o", "x", "o", "x", "o", ""]

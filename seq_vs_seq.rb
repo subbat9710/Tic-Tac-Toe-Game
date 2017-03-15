@@ -43,4 +43,4 @@ while true
 	end
 	turn += 1
 end
-#print board.board
+print board.board
