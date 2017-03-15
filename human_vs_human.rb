@@ -1,14 +1,12 @@
 require_relative "board.rb"
 require_relative "console.rb"
-require_relative "sequential.rb"
-require_relative "board_player.rb"
-require_relative "random.rb"
+#require_relative "human.rb"
 
 #to run the game
 board = Board.new
 puts 'Wellcome. Player1, what is your name?'
 name1 = gets.chomp
-player1 = Player.new(name1, 'x')
+player1 = Player.new(name1, 'x') 
 puts "Hey, #{name1}. Your symbol is 'x'"
 sleep 1
 puts 'Player2, what is your name?'
@@ -27,7 +25,6 @@ console.display_board(board.board) #this line display the board in the terminals
 	board.set_position(move, "x")
 	console.display_board(board.board)
     sleep 1
-    #console.display_board(board.board)
     if console.game_over?
         break
     end
@@ -35,13 +32,16 @@ console.display_board(board.board) #this line display the board in the terminals
     move = gets.chomp.to_i
     board.set_position(move, "o")
     console.display_board(board.board)
-    
-end
-    if board.winner_of_game = "x"
-      puts "#{name1}"
-  else 
-    puts "#{name2}"
-end
+    end
+    if board.winner_of_game == "x"
+        puts "#{name1} you won, Congratulations!"
+    else board.winner_of_game == "o"
+        puts "#{name2} you won, Congratulations!" 
+    end
+
+
+
+
 
 
  # console = Console.new

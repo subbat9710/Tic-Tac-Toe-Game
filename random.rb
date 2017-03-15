@@ -1,20 +1,20 @@
 require_relative "board.rb"
 require_relative "console.rb"
 
-class Random
-    attr_accessor :board, :current_player
+class RandomPlayer
+    attr_accessor :marker, :current_player
 
-    def initialize(marker)
-   	    @marker = marker
-   	    @current_player = current_player
-   	end
-   	def get_move(board, current_player)
-   		random.rand(@board.get_size)
+	def initialize(marker)
+		@marker = marker
+		@current_player = current_player
+	end
+    def move(board, current_player)
+    	random = Random.new
+    	random.rand(@board)
     end
-end
-
-
+end 
 # random = Random.new
 # board = Board.new
-# board = ["x", "o", "x", "o", "x", "o", "x", "o", ""]
-# move = random.get_move("x", 7)
+# console = Console.new
+# console.get_move(current_player)
+# p board.board

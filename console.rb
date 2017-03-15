@@ -1,15 +1,15 @@
 require_relative "board.rb"
 require_relative "sequential.rb"
 require_relative "board_player.rb"
+require_relative "human.rb"
 
 class Console
-	attr_accessor :board, :player, :player1, :player2, :currentplayer
+	attr_accessor :board, :name, :currentplayer
 
 	def initialize(board)
-		@board = board
-		@player = Player.new("Player1", "Player2")
-   
-	end
+	    @board = board
+	 	@player = Player.new("Player1", "Player2")
+    end
 
 	def display_board(board)  #display the whole tictactoe board 
 		puts "\n
@@ -27,28 +27,9 @@ class Console
     	   currentplayer = player.name1
     	end	
     end
-    #def get_move(move)
-    #	currentplayer.get_move(board)
-    # def move(currentplayer, marker)
-    #     valid = false
-    #     while valid == false
-    #         puts "#{currentplayer}, Your turn."
-    #         set_position = gets.chomp.downcase
-    #         if set_position == 'exit'
-    #             puts "Exiting game."
-    #             return exit
-    #         elsif not set_position.match /[abc][123]/
-    #             puts "not valid input."
-    #             sleep 1
-    #         elsif @board[set_position] != '-'
-    #             puts 'Already something there'
-    #             sleep 1
-    #         else
-    #             valid = true
-    #             @board[set_position] = marker
-    #         end
-    #     end
-    # end
+    def get_move(move)
+      	currentplayer.get_move(board)
+    end
  
     def game_over?
     	@board.stub_winner? || (@board.stub_winner? == false && @board.check_full? == true)

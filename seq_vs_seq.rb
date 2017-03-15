@@ -1,9 +1,10 @@
 require_relative "board.rb"
 require_relative "sequential.rb"
 require_relative "console.rb"
-require_relative "random.rb"
+#require_relative "random.rb"
 
 board = Board.new
+console = Console.new(board)
 
 player1 = Sequential.new("x")
 player2 = Sequential.new("o")
@@ -16,7 +17,7 @@ player2 = Sequential.new("o")
 turn = 1
 
 while true
-	print board.board
+	print console.display_board(board.board)
 	puts ""
 	move = nil
 	if turn % 2 == 1
@@ -24,17 +25,19 @@ while true
 		while !board.check_position?(move) # while the position is already taken by another mark, get another move (this will be important later)
 			move = player1.get_move(board.board)
 		end
+		sleep 1
 		board.set_position(move, player1.marker)
 	else
 		move = player2.get_move(board.board)
 		while !board.check_position?(move) # while the position is already taken by another mark, get another move (this will be important later)
 			move = player2.get_move(board.board)
 		end
+		sleep 1
 		board.set_position(move, player2.marker)
 	end
 
 	if board.stub_winner?
-		puts board.winner_of_game #+ " has won the game"
+		puts board.winner_of_game + ", Congratulations you won the game"
 		break # end game
 	end
 	if board.tie
@@ -43,4 +46,5 @@ while true
 	end
 	turn += 1
 end
-print board.board
+sleep 1
+print console.display_board(board.board)

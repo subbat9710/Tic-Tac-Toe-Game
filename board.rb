@@ -51,7 +51,7 @@ class Board
     def tie
         if stub_winner? == false && check_full? == true
             puts "game is tie"
-            return true
+            return true unless stub_winner?
         end
         return false
     end
