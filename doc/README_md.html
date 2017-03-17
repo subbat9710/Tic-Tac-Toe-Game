@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Board.html">Board</a>
+  
+    <li><a href="./Console.html">Console</a>
+  
+    <li><a href="./Player.html">Player</a>
+  
+    <li><a href="./RandomPlayer.html">RandomPlayer</a>
+  
+    <li><a href="./Sequential.html">Sequential</a>
+  
+    <li><a href="./TestBoard.html">TestBoard</a>
+  
+    <li><a href="./TestConsole.html">TestConsole</a>
+  
+    <li><a href="./TestHuman.html">TestHuman</a>
+  
+    <li><a href="./TestSequential.html">TestSequential</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-TTTboard">TTTboard<span><a href="#label-TTTboard">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>Further details
+Consider a board with the nine positions numbered as
+follows:</p>
+
+<p>1 2 3
+4 5 6
+7 8 9
+When X plays 1 as their opening move, then O should take
+5. Then X takes 9 (in this situation, O should not take 3 or 7, O should
+take 2, 4, 6 or 8):</p>
+
+<p>X1 → O5 → X9 → O2 → X8 → O7 → X3 → O6 → X4, this game will be a draw.
+or 6
+(in this situation, O should not take 4 or 7, O should take 2, 3, 8 or 9.
+In fact, taking 9 is the best move, since a non-perfect player X may take
+4, then O can take 7 to win).</p>
+
+<p>X1 → O5 → X6 → O2 → X8, then O should not take 3, or X can take 7 to win,
+and O should not take 4, or X can take 9 to win, O should take 7 or 9.
+X1 →
+O5 → X6 → O2 → X8 → O7 → X3 → O9 → X4, this game will be a draw.
+X1 → O5 →
+X6 → O2 → X8 → O9 → X4 (7) → O7 (4) → X3, this game will be a draw.
+X1 → O5
+→ X6 → O3 → X7 → O4 → X8 (9) → O9 (8) → X2, this game will be a draw.
+X1 →
+O5 → X6 → O8 → X2 → O3 → X7 → O4 → X9, this game will be a draw.
+X1 → O5 →
+X6 → O9, then X should not take 4, or O can take 7 to win, X should take 2,
+3, 7 or 8.
+X1 → O5 → X6 → O9 → X2 → O3 → X7 → O4 → X8, this game will be a
+draw.
+X1 → O5 → X6 → O9 → X3 → O2 → X8 → O4 (7) → X7 (4), this game will be
+a draw.
+X1 → O5 → X6 → O9 → X7 → O4 → X2 (3) → O3 (2) → X8, this game will
+be a draw
+X1 → O5 → X6 → O9 → X8 → O2 (3, 4, 7) → X4/7 (4/7, 2/3, 2/3) →
+O7/4 (7/4, 3/2, 3/2) → X3 (2, 7, 4), this game will be a draw.
+In both of
+these situations (X takes 9 or 6 as second move), X has a {\displaystyle
+{\frac {1}{3}}} {\frac {1}{3}} property to win.</p>
+
+<p>If X is not a perfect player, X may take 2 or 3 as second move. Then this
+game will be a draw, X cannot win.</p>
+
+<p>X1 → O5 → X2 → O3 → X7 → O4 → X6 → O8 (9) → X9 (8), this game will be a
+draw.
+X1 → O5 → X3 → O2 → X8 → O4 (6) → X6 (4) → O9 (7) → X7 (9), this game
+will be a draw.
+If X plays 1 opening move, and O is not a perfect player,
+the following may happen:</p>
+
+<p>Although O takes the only good position (5) as first move, but O takes a
+bad position as second move:</p>
+
+<p>X1 → O5 → X9 → O3 → X7, then X can take 4 or 8 to win.
+X1 → O5 → X6 → O4 →
+X3, then X can take 2 or 9 to win.
+X1 → O5 → X6 → O7 → X3, then X can take
+2 or 9 to win.
+Although O takes good positions as the first two moves, but
+O takes a bad position as third move:</p>
+
+<p>X1 → O5 → X6 → O2 → X8 → O3 → X7, then X can take 4 or 9 to win.
+X1 → O5 →
+X6 → O2 → X8 → O4 → X9, then X can take 3 or 7 to win.
+O takes a bad
+position as first move (except of 5, all other positions are bad):</p>
+
+<p>X1 → O3 → X7 → O4 → X9, then X can take 5 or 8 to win.
+X1 → O9 → X3 → O2 →
+X7, then X can take 4 or 5 to win.
+X1 → O2 → X5 → O9 → X7, then X can take
+3 or 4 to win.
+X1 → O6 → X5 → O9 → X3, then X can take 2 or 7 to win.</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

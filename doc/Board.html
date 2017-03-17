@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Board - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>board.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-check_full-3F">#check_full?</a>
+    
+    <li ><a href="#method-i-check_position-3F">#check_position?</a>
+    
+    <li ><a href="#method-i-set_position">#set_position</a>
+    
+    <li ><a href="#method-i-stub_winner-3F">#stub_winner?</a>
+    
+    <li ><a href="#method-i-tie">#tie</a>
+    
+    <li ><a href="#method-i-winner">#winner</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Board.html">Board</a>
+  
+    <li><a href="./Console.html">Console</a>
+  
+    <li><a href="./Player.html">Player</a>
+  
+    <li><a href="./RandomPlayer.html">RandomPlayer</a>
+  
+    <li><a href="./Sequential.html">Sequential</a>
+  
+    <li><a href="./TestBoard.html">TestBoard</a>
+  
+    <li><a href="./TestConsole.html">TestConsole</a>
+  
+    <li><a href="./TestHuman.html">TestHuman</a>
+  
+    <li><a href="./TestSequential.html">TestSequential</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Board</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-board" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">board</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-winner_of_game" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">winner_of_game</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File board.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+    <span class="ruby-ivar">@board</span> = [<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>] <span class="ruby-comment">#simply returning instance variable @board</span>
+    <span class="ruby-ivar">@winner_of_game</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-check_full-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_full?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_full-3F-source">
+            <pre><span class="ruby-comment"># File board.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_full?</span>()
+    <span class="ruby-ivar">@board</span>.<span class="ruby-identifier">count</span>(<span class="ruby-string">&quot;&quot;</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_full-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_full-3F-method -->
+
+    
+      <div id="method-i-check_position-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_position?</span><span
+            class="method-args">(position)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_position-3F-source">
+            <pre><span class="ruby-comment"># File board.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_position?</span>(<span class="ruby-identifier">position</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@board</span>[<span class="ruby-identifier">position</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">false</span>   <span class="ruby-comment">#return false for the free position</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_position-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_position-3F-method -->
+
+    
+      <div id="method-i-set_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_position</span><span
+            class="method-args">(position, marker)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_position-source">
+            <pre><span class="ruby-comment"># File board.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_position</span>(<span class="ruby-identifier">position</span>, <span class="ruby-identifier">marker</span>)
+   <span class="ruby-ivar">@board</span>[<span class="ruby-identifier">position</span>] = <span class="ruby-identifier">marker</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_position-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_position-method -->
+
+    
+      <div id="method-i-stub_winner-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stub_winner?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="stub_winner-3F-source">
+            <pre><span class="ruby-comment"># File board.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stub_winner?</span> <span class="ruby-comment">#check if player won the game</span>
+    <span class="ruby-identifier">winner</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">win_array</span> = [[<span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>], [<span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span>], [<span class="ruby-value">6</span>, <span class="ruby-value">7</span>, <span class="ruby-value">8</span>], [<span class="ruby-value">0</span>, <span class="ruby-value">3</span>, <span class="ruby-value">6</span>], [<span class="ruby-value">1</span>, <span class="ruby-value">4</span>, <span class="ruby-value">7</span>], [<span class="ruby-value">2</span>, <span class="ruby-value">5</span>, <span class="ruby-value">8</span>], [<span class="ruby-value">0</span>, <span class="ruby-value">4</span>, <span class="ruby-value">8</span>], [<span class="ruby-value">2</span>, <span class="ruby-value">4</span>, <span class="ruby-value">6</span>]]
+    <span class="ruby-identifier">win_array</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">x_counter</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">o_counter</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">index</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index_check</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-ivar">@board</span>[<span class="ruby-identifier">index_check</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;x&quot;</span>
+                <span class="ruby-identifier">x_counter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@board</span>[<span class="ruby-identifier">index_check</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;o&quot;</span>
+                <span class="ruby-identifier">o_counter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">x_counter</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span>
+                <span class="ruby-ivar">@winner_of_game</span> = <span class="ruby-string">&quot;X&quot;</span>
+                <span class="ruby-identifier">winner</span> = <span class="ruby-keyword">true</span>
+            <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">o_counter</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span>
+                <span class="ruby-ivar">@winner_of_game</span> = <span class="ruby-string">&quot;O&quot;</span>
+                <span class="ruby-identifier">winner</span> = <span class="ruby-keyword">true</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">winner</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stub_winner-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stub_winner-3F-method -->
+
+    
+      <div id="method-i-tie" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tie</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="tie-source">
+            <pre><span class="ruby-comment"># File board.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tie</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">stub_winner?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">check_full?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;game is tie&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">stub_winner?</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tie-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tie-method -->
+
+    
+      <div id="method-i-winner" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">winner</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="winner-source">
+            <pre><span class="ruby-comment"># File board.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">winner</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">stub_winner?</span> 
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;someone won&quot;</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- winner-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- winner-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
