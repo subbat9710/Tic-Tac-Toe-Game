@@ -1,7 +1,6 @@
 require_relative "board.rb"
 require_relative "sequential.rb"
 require_relative "console.rb"
-#require_relative "random.rb"
 
 board = Board.new
 console = Console.new(board)

@@ -1,27 +1,9 @@
 require_relative "board.rb"
 require_relative "console.rb"
 require_relative "human.rb"
+require_relative "random.rb"
 
-class RandomPlayer
-    attr_accessor :marker, :currentplayer
-
-	def initialize(marker)
-		@marker = marker
-		@currentplayer = currentplayer
-	end
-    def move(board, currentplayer)
-    	position = rand(0..8)
-        if board.board[position] != "" 
-            puts "#{board.board}"
-            move(board, currentplayer)
-    	else
-    		position
-            if rand(2) == 1
-    	end
-    	    position
-        end
-    end
-end 
+#For randomplayer Vs player2
 board = Board.new
 player2 = RandomPlayer.new("o")
 currentplayer = player2
@@ -32,7 +14,7 @@ puts "Wellcome Player1, What is your name? "
 name = gets.chomp
 console.display_board(board.board) #this line display the board in the terminals.
 while !console.game_over? 
-    print "#{name} Enter your move: "
+    print "#{name}, Enter your move: "
  	move = gets.chomp.to_i  
 	board.set_position(move, "x")
 	console.display_board(board.board)
