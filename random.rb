@@ -16,16 +16,19 @@ class RandomPlayer
             move(board, currentplayer)
     	else
     		position
+            if rand(2) == 1
     	end
     	    position
+        end
     end
 end 
 board = Board.new
-player2 = RandomPlayer.new("x")
+player2 = RandomPlayer.new("o")
 currentplayer = player2
 move = player2.move(board, currentplayer)
 
 console = Console.new(board) 
+puts "Wellcome Player1, What is your name? "
 name = gets.chomp
 console.display_board(board.board) #this line display the board in the terminals.
 while !console.game_over? 
@@ -41,6 +44,12 @@ while !console.game_over?
     board.set_position(move, "o")
     console.display_board(board.board)
     end
-    if board.winner_of_game == "x"
+    if board.winner_of_game == "X"
         puts  "#{name} you won, Congratulations!"
+        exit
+    elsif board.winner_of_game == "O"
+        puts "RandomPlayer won, Congratulations!" 
+        exit
+    else
+        puts "Game is in Tie, Try Again"    
     end
