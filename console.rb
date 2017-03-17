@@ -1,14 +1,15 @@
 require_relative "board.rb"
 require_relative "sequential.rb"
-require_relative "board_player.rb"
 require_relative "human.rb"
 
 class Console
-	attr_accessor :board, :name, :currentplayer
+	attr_accessor :board, :name, :currentplayer, :player1, :player2
 
 	def initialize(board)
 	    @board = board
-	 	@player = Player.new("Player1", "Player2")
+	 	@player1 = Player.new("name", "marker")
+        @player2 = Player.new("name", "marker")
+        @currentplayer = @player1
     end
 
 	def display_board(board)  #display the whole tictactoe board 
@@ -21,10 +22,10 @@ class Console
     end 
     
     def switch_player(currentplayer)
-    	if currentplayer == player.name1
-    	   currentplayer = player.name2
+    	if currentplayer == player1
+    	   currentplayer = player2
     	else
-    	   currentplayer = player.name1
+    	   currentplayer = player1
     	end	
     end
     def get_move(move)

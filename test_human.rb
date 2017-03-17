@@ -4,10 +4,12 @@ require_relative "console.rb"
 
 class TestHuman < Minitest::Test
 
-	def test_1_player1_play_first
-		human = Human.new("x")
-		board = Board.new
-	    board.board = ["x", "", "1", "o", "", "", "", "", ""]
-		assert_equal(1, human.get_move(board))
-    end
+	def test_name1_as_first_player
+	    board = Player.new("Player1", "Player2")
+		assert_equal("Player1", board.name)
+	end
+	def test_name2_as_second_player
+		board = Player.new("Player1", "Player2")
+		assert_equal("Player2", board.marker)
+	end
 end

@@ -1,43 +1,47 @@
 require_relative "board.rb"
 require_relative "console.rb"
-#require_relative "human.rb"
+require_relative "human.rb"
 
 #to run the game
 board = Board.new
 puts 'Wellcome. Player1, what is your name?'
-name1 = gets.chomp
-player1 = Player.new(name1, 'x') 
-puts "Hey, #{name1}. Your symbol is 'x'"
+name = gets.chomp
+player1 = Player.new(name, 'x') 
+puts "Hey, #{name}. Your symbol is 'x'"
 sleep 1
 puts 'Player2, what is your name?'
-name2 = gets.chomp
-player2 = Player.new(name2, 'o')
-puts "Hey, #{name2} Your symbol is 'o'"
+marker = gets.chomp
+player2 = Player.new(marker, 'o')
+puts "Hey, #{marker} Your symbol is 'o'"
 sleep 1
 currentplayer = player1
 console = Console.new(board) 
-#random = Random.new
 console.display_board(board.board) #this line display the board in the terminals.
- while !console.game_over? 
-    print "#{name1}, enter your move: "
- 	move = gets.chomp.to_i  
-	#move = random.move
+while !console.game_over? 
+    print "#{name}, enter your move: "
+ 	move = gets.chomp.to_i
 	board.set_position(move, "x")
 	console.display_board(board.board)
     sleep 1
     if console.game_over?
         break
     end
-    print "#{name2}, enter your move: " 
+    print "#{marker}, enter your move: " 
     move = gets.chomp.to_i
     board.set_position(move, "o")
     console.display_board(board.board)
     end
-    if board.winner_of_game == "x"
-        puts "#{name1} you won, Congratulations!"
-    else board.winner_of_game == "o"
-        puts "#{name2} you won, Congratulations!" 
+    if board.winner_of_game == "X"
+        puts "#{name} you won, Congratulations!"
+        exit
+    elsif board.winner_of_game == "O"
+        puts "#{marker} you won, Congratulations!" 
+        exit
+    else
+        puts "Game is in tie, Try Again ^_^ "
+        exit
     end
+
 
 
 
