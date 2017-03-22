@@ -12,18 +12,22 @@ class Unbeatable
 		@currentplayer = currentplayer
     end
 	def get_move(board)
-		if currentplayer.marker == "O"
-			other_player = "X"
-		else
-			other_player = "O"
-		end
+        if check_win(board, currentplayer) < 10
+        	move = check_win(board, currentplayer)
+        elsif check_block(board, currentplayer) < 10 
+        	move = check_block(board, currentplayer)
+        elsif check_corner(board) < 10
+        	move = check_corner(board)
+        elsif check_center(board, currentplayer) < 10
+        	move = check_center(board)
+        elsif check_diags(board) < 10
+        	move = check_diags(board)
+        else check_size(board) < 10
+        	move = check_size(board)
+        end
+        move
     end
-	def check_win(board, currentplayer)
-		check_win(board, currentplayer)
-	end
-	def check_block(board, currentplayer)
-		check_block(board, currentplayer)
-	end
+
 	def map_board(board)
 		win_combinations = [
 			                 [board[0], board[1], board[2]],
@@ -97,22 +101,18 @@ class Unbeatable
     	end
     	move
     end
+    def check_diags(board)
+    	move = 10
+    	diags.each do |element|
+    		element.each do |indx|
+    			if board[indx] == ""
+    				move = indx
+    			end
+    		end
+    	end
+    	move
+    end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

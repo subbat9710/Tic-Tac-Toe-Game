@@ -92,4 +92,10 @@ class TestUnbeatable < Minitest::Test
 		game = Console.new(board)
 		assert_equal(7, ai.check_size(board))
     end
+    def test_for_check_diags
+		ai = Unbeatable.new("o")
+		board = ["x", "", "", "o", "x", "o", "", "x", "o"]
+		game = Console.new(board)
+		assert_equal(1, ai.check_size(board))
+    end
 end
