@@ -80,4 +80,16 @@ class TestUnbeatable < Minitest::Test
 		game = Console.new(board)
 		assert_equal(3, ai.check_size(board))
     end
+    def test_for_third_check_size
+		ai = Unbeatable.new("o")
+		board = ["x", "o", "x", "o", "x", "", "o", "x", "o"]
+		game = Console.new(board)
+		assert_equal(5, ai.check_size(board))
+    end
+    def test_for_fourth_check_size
+		ai = Unbeatable.new("o")
+		board = ["x", "o", "x", "o", "x", "o", "o", "", "o"]
+		game = Console.new(board)
+		assert_equal(7, ai.check_size(board))
+    end
 end
