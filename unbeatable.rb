@@ -88,6 +88,15 @@ class Unbeatable
     	end
     	move
     end
+    def check_size(board)
+    	move = 10
+    	size.each do |element|
+    		if board[element] == ""
+    			move = element
+    		end
+    	end
+    	move
+    end
 end
 
 
