@@ -33,7 +33,7 @@ Although O takes the only good position (5) as first move, but O takes a bad pos
 X1 → O5 → X9 → O3 → X7, then X can take 4 or 8 to win.
 X1 → O5 → X6 → O4 → X3, then X can take 2 or 9 to win.
 X1 → O5 → X6 → O7 → X3, then X can take 2 or 9 to win.
-Although O takes good positions as the first two moves, but O takes a bad position as third move:
+Although O takes good positions as the first two moves, but O takes a bad position as third move
 
 X1 → O5 → X6 → O2 → X8 → O3 → X7, then X can take 4 or 9 to win.
 X1 → O5 → X6 → O2 → X8 → O4 → X9, then X can take 3 or 7 to win.
