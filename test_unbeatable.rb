@@ -20,10 +20,16 @@ class TestUnbeatable < Minitest::Test
 		game = Console.new(board)
 		assert_equal(6, ai.check_win(board, ai))
 	end
-	def test_position_one_for_block
+	def test_position_six_for_block
 		ai = Unbeatable.new("o")
 		board = ["o", "o", "x", "o", "x", "o", "", "x", "x"]
 		game = Console.new(board)
 		assert_equal(6, ai.check_block(board, ai))
+	end
+    def test_position_one_for_block
+		ai = Unbeatable.new("o")
+		board = ["o", "", "x", "o", "x", "o", "o", "x", "x"]
+		game = Console.new(board)
+		assert_equal(1, ai.check_block(board, ai))
 	end
 end
