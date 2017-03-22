@@ -1,12 +1,16 @@
 require_relative "board.rb"
 
 class Unbeatable
-	attr_accessor :marker, :currentplayer
+	attr_accessor :marker, :currentplayer, :corner, :size, :center, :diags
 
 	def initialize(marker)
+		@corner = [0,2,6,8]
+		@size = [1,3,5,7]
+		@center = [4]
+		@diags = [[2,6],[0,8]]
 		@marker = marker
 		@currentplayer = currentplayer
-	end
+    end
 	def get_move(board)
 		if currentplayer.marker == "O"
 			other_player = "X"
@@ -35,7 +39,7 @@ class Unbeatable
 	def check_win(board, currentplayer)
 		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
         win_array1 = map_board(board)
-		move = 1
+		move = 10
 
 		win_array1.each_with_index do |element, indx|
 			# puts "#{element.inspect}"
@@ -51,7 +55,7 @@ class Unbeatable
  	def check_block(board, currentplayer)
  		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
         win_array1 = map_board(board)
- 		move = 1
+ 		move = 10
  		if currentplayer.marker == "o"
 			other_player = "x"
 		else
@@ -69,7 +73,12 @@ class Unbeatable
  		end
          move
  	end
-# end
+ 	def check_center(board, center) 
+        move = 10
+        if board[4] == ""
+        	move = 4
+        end
+    end
 end
 
 

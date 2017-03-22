@@ -38,4 +38,10 @@ class TestUnbeatable < Minitest::Test
 		game = Console.new(board)
 		assert_equal(8, ai.check_block(board, ai))
 	end
+	def test_position_for_center
+		ai = Unbeatable.new("o")
+		board = ["o", "o", "", "", "", "x", "x", "o", "x"]
+		game = Console.new(board)
+		assert_equal(4, ai.check_center(board, ai))
+	end
 end
