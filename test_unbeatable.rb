@@ -44,4 +44,10 @@ class TestUnbeatable < Minitest::Test
 		game = Console.new(board)
 		assert_equal(4, ai.check_center(board, ai))
 	end
+	def test_for_corner
+		ai = Unbeatable.new("o")
+		board = ["", "o", "x", "o", "x", "o", "o", "x", "x"]
+		game = Console.new(board)
+		assert_equal(0, ai.check_corner(board))
+	end
 end

@@ -79,6 +79,15 @@ class Unbeatable
         	move = 4
         end
     end
+    def check_corner(board)
+    	move = 10
+    	corner.each do |element|
+    		if board[element] == ""
+    			move = element
+    		end
+    	end
+    	move
+    end
 end
 
 
