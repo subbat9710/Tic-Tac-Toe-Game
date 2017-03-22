@@ -9,16 +9,16 @@ class Unbeatable
 	end
 	def get_move(board)
 		if currentplayer.marker == "O"
-			aiplayer = "X"
+			other_player = "X"
 		else
-			aiplayer = "O"
+			other_player = "O"
 		end
     end
 	def check_win(board, currentplayer)
 		check_win(board, currentplayer)
 	end
-	def block_win(board, currentplayer)
-		win_or_block(board, currentplayer)
+	def check_block(board, currentplayer)
+		check_block(board, currentplayer)
 	end
 	def map_board(board)
 		win_combinations = [
@@ -48,22 +48,27 @@ class Unbeatable
 		end
         move
 	end
-# 	def win_or_block(board, currentplayer)
-# 		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-#         win_or_block_array = map_board(board)
-# 		move = 1
+ 	def check_block(board, currentplayer)
+ 		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+        win_array1 = map_board(board)
+ 		move = 1
+ 		if currentplayer.marker == "o"
+			other_player = "x"
+		else
+			other_player = "o"
+		end
 
-# 		win_or_block_array.each_with_index do |element, indx|
-# 			# puts "#{element.inspect}"
-# 			# puts "#{element.count(currentplayer.marker)}"
-# 			if element.count(currentplayer.marker) == 2 && element.count("") == 1
-# 				winner_or_block = element.index("")
-# 				puts "#{winner_or_block}"
-# 				move = win_array[indx][winner_or_block]
-# 			end
-# 		end
-#         move
-# 	end
+ 		win_array1.each_with_index do |element, indx|
+ 			# puts "#{element.inspect}"
+ 			# puts "#{element.count(currentplayer.marker)}"
+ 			if element.count(other_player) == 2 && element.count("") == 1
+ 				winner_or_block = element.index("")
+ 				puts "#{winner_or_block}"
+ 				move = win_array[indx][winner_or_block]
+ 			end
+ 		end
+         move
+ 	end
 # end
 end
 
