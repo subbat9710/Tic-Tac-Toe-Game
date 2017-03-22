@@ -9,11 +9,10 @@ class RandomPlayer
 		@marker = marker
 		@currentplayer = currentplayer
 	end
-    def move(board, currentplayer)
+    def get_move(board)
         position = rand(0..8)
-        if board.board[position] != "" 
-            puts "#{board.board}"
-            move(board, currentplayer)
+        if board[position] != "" 
+            get_move(board)
         else
           position
         end

@@ -1,7 +1,7 @@
 require_relative "board.rb"
 
 class Unbeatable
-	attr_accessor :marker, :currentplayer, :corner, :size, :center, :diags
+	attr_accessor :marker, :currentplayer, :corner, :size, :center, :diags, :board
 
 	def initialize(marker)
 		@corner = [0,2,6,8]
@@ -10,6 +10,7 @@ class Unbeatable
 		@diags = [[2,6],[0,8]]
 		@marker = marker
 		@currentplayer = currentplayer
+		@board = board 
     end
 	def get_move(board)
         if check_win(board, currentplayer) < 10
@@ -29,7 +30,7 @@ class Unbeatable
     end
 
 	def map_board(board)
-		win_combinations = [
+		win_array1 = [
 			                 [board[0], board[1], board[2]],
 			                 [board[3], board[4], board[5]],
 			                 [board[6], board[7], board[8]],
@@ -46,9 +47,7 @@ class Unbeatable
 		move = 10
 
 		win_array1.each_with_index do |element, indx|
-			# puts "#{element.inspect}"
-			# puts "#{element.count(currentplayer.marker)}"
-			if element.count(currentplayer.marker) == 2 && element.count("") == 1
+			if element.count(marker) == 2 && element.count("") == 1
 				winner_or_block = element.index("")
 				puts "#{winner_or_block}"
 				move = win_array[indx][winner_or_block]
@@ -60,7 +59,7 @@ class Unbeatable
  		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
         win_array1 = map_board(board)
  		move = 10
- 		if currentplayer.marker == "o"
+ 		if marker == "o"
 			other_player = "x"
 		else
 			other_player = "o"

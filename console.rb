@@ -1,15 +1,17 @@
 require_relative "board.rb"
 require_relative "sequential.rb"
 require_relative "human.rb"
+require_relative "random.rb"
+require_relative "unbeatable.rb"
 
 class Console
 	attr_accessor :board, :name, :currentplayer, :player1, :player2
 
-	def initialize(board)
+	def initialize(board, player1, player2)
 	    @board = board
-	 	@player1 = Player.new("name", "marker")
-        @player2 = Player.new("name", "marker")
-        @currentplayer = @player1
+	 	@player1 = player1
+        @player2 = player2
+        @currentplayer = player2
     end
 
 	def display_board(board)  #display the whole tictactoe board 
@@ -22,14 +24,14 @@ class Console
     end 
     
     def switch_player(currentplayer)
-    	if currentplayer == player1
-    	   currentplayer = player2
+    	if @currentplayer == player1
+    	   @currentplayer = player2
     	else
-    	   currentplayer = player1
+    	   @currentplayer = player1
     	end	
     end
-    def get_move(move)
-      	currentplayer.get_move(board)
+    def get_move(board)
+      	@currentplayer.get_move(board)
     end
  
     def game_over?
@@ -38,17 +40,9 @@ class Console
     def game_status  #check for game, if currentplayer wins then win otherwise tie.
     	if board.stub_winner?
     		puts "#{currentplayer} you won"
-    	else 
-    		puts "tie"
+    	else
+    		puts "Game is tie"
     	end
-    end
-    def check(pick, currentplayer) #check pick spot for availability
-        if board[pick] == pick + 1
-            board[pick] = currentplayer.marker
-            true
-        else
-            false
-        end
     end
 end
     # console = Console.new
