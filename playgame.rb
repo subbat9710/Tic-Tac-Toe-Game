@@ -4,7 +4,6 @@ board = Board.new
 player1 = Player.new("name", "x")
 player2 = Unbeatable.new("o")
 console = Console.new(board, player1, player2)
-#currentplayer = player1
 
 while !console.game_over?
     console.switch_player(console.currentplayer) 

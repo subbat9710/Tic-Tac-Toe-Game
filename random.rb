@@ -3,11 +3,12 @@ require_relative "console.rb"
 require_relative "human.rb"
 
 class RandomPlayer
-    attr_accessor :marker, :currentplayer
+    attr_accessor :marker, :currentplayer, :name 
 
 	def initialize(marker)
 		@marker = marker
 		@currentplayer = currentplayer
+        @name = "RandomPlayer"
 	end
     def get_move(board)
         position = rand(0..8)

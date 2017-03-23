@@ -39,7 +39,7 @@ class Console
     end
     def game_status  #check for game, if currentplayer wins then win otherwise tie.
     	if board.stub_winner?
-    		puts "#{currentplayer} you won"
+    		puts "#{currentplayer.name}, you won"
     	else
     		puts "Game is tie"
     	end

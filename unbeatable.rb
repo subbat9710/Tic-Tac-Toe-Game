@@ -1,7 +1,7 @@
 require_relative "board.rb"
 
 class Unbeatable
-	attr_accessor :marker, :currentplayer, :corner, :size, :center, :diags, :board
+	attr_accessor :marker, :currentplayer, :corner, :size, :center, :diags, :board, :name
 
 	def initialize(marker)
 		@corner = [0,2,6,8]
@@ -11,6 +11,7 @@ class Unbeatable
 		@marker = marker
 		@currentplayer = currentplayer
 		@board = board 
+		@name = "Unbeatable"
     end
 	def get_move(board)
         if check_win(board, currentplayer) < 10
@@ -19,8 +20,8 @@ class Unbeatable
         	move = check_block(board, currentplayer)
         elsif check_corner(board) < 10
         	move = check_corner(board)
-        elsif check_center(board, currentplayer) < 10
-        	move = check_center(board)
+        elsif check_center(board, center) < 10
+        	move = check_center(board, center)
         elsif check_diags(board) < 10
         	move = check_diags(board)
         else check_size(board) < 10
@@ -78,10 +79,10 @@ class Unbeatable
  	end
  	def check_center(board, center) 
         move = 10
-        if board[4] == ""
+        board[4] == ""
         	move = 4
-        end
     end
+        
     def check_corner(board)
     	move = 10
     	corner.each do |element|
