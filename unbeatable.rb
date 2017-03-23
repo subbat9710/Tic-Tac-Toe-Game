@@ -4,16 +4,16 @@ class Unbeatable
 	attr_accessor :marker, :currentplayer, :corner, :size, :center, :diags, :board, :name
 
 	def initialize(marker)
-		@corner = [0,2,6,8]
-		@size = [1,3,5,7]
-		@center = [4]
-		@diags = [[2,6],[0,8]]
+		@corner = [0,2,6,8]  #corner board positions 
+		@size = [1,3,5,7]    #size board positions
+		@center = [4]        #center position
+		@diags = [[2,6],[0,8]] #diagonals positions
 		@marker = marker
 		@currentplayer = currentplayer
 		@board = board 
-		@name = "Unbeatable"
+		@name = "Unbeatable"  #if unbeatable wins the game the, "unbeatable won the game"=>result
     end
-	def get_move(board)
+	def get_move(board)  #loop for all the positions to move in available positions
         if check_win(board, currentplayer) < 10
         	move = check_win(board, currentplayer)
         elsif check_block(board, currentplayer) < 10 
@@ -30,7 +30,7 @@ class Unbeatable
         move
     end
 
-	def map_board(board)
+	def map_board(board)  #map board for win arrays
 		win_array1 = [
 			                 [board[0], board[1], board[2]],
 			                 [board[3], board[4], board[5]],
@@ -42,6 +42,7 @@ class Unbeatable
 			                 [board[2], board[4], board[6]]
 		                    ]
 	    end
+	    #checks for posible wins
 	def check_win(board, currentplayer)
 		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
         win_array1 = map_board(board)
@@ -56,6 +57,7 @@ class Unbeatable
 		end
         move
 	end
+	#blocks the posible wins
  	def check_block(board, currentplayer)
  		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
         win_array1 = map_board(board)
