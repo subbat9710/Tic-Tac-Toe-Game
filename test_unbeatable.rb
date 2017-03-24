@@ -1,6 +1,5 @@
 require "minitest/autorun"
 require_relative "unbeatable.rb"
-require_relative "console.rb"
 
 class TestUnbeatable < Minitest::Test
 
@@ -99,26 +98,4 @@ class TestUnbeatable < Minitest::Test
     	board = ["", "x", "", "", "o", "x", "", "", ""]
 		assert_equal(2, ai.block_fork(board, ai))
 	end
-	#    def test_for_block_fork_position
- #    	ai = Unbeatable.new("o")
- #    	board = ["", "", "x", "", "o", "", "x", "", ""]
-	# 	assert_equal(3, ai.block_fork(board, ai))
-	# end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
