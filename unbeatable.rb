@@ -52,31 +52,14 @@ class Unbeatable
 		win_array1 = map_board(board)
 		fork_size = []
 		move = 10
-		
         win_array1.each_with_index do |element, indx|
 			if element.count(marker) == 1 && element.count("") == 2
                 create_or_block = element.index("")
 				move = win_array[indx][create_or_block]		
 			end
-               
-			#     fork_size.push(element) 
-			     puts "#{move.inspect}"
-			# 	move = win_array1[indx][fork_size]
-			# end
+			   #  puts "#{move.inspect}"
 		end
-		# fork_size = fork_size.flatten.sort
-	 #    fork_array = []
-	 #    fork_size.each do |size|
-	 #    	if board[size] = ""
-	 #    		fork_array.push(size)
-	 #    	end
-	 #    end
-	    # if fork_array.detect { |match| fork_array.count(match) > 1 } == nil
-	    # 	puts "#{fork_array}"
-	    # else
-	    # 	move = fork_array.detect { |match| fork_array.count(match) > 1 }
-	    # end
-	     move
+	    move
 	end
 	def block_fork(board, currentplayer)
 		block_win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
@@ -87,14 +70,31 @@ class Unbeatable
 		else
 			other_player = "o"
 		end
-		block_win_array1.each_with_index do |block_element, indx|
-			if block_element.count(other_player) == 1 && block_element.count("") == 2
-				create_or_block = block_element.index("")
-				move = block_win_array[indx][create_or_block]
-			end
-			#puts "#{move.inspect}"
-		end
-		move
+		diags.each do |element|
+	    	counter = 0
+	    	element.each do |indx|
+	    		#puts "#{board.inspect}"
+	    		if board[indx] == other_player
+	    			#puts "#{marker}"
+                    counter += 1
+                end
+                if counter == 2
+                	move = check_size(board)
+                end
+                #puts "#{move}"
+            end
+            move
+        end
+        if move == 10
+		    block_win_array1.each_with_index do |block_element, indx|
+			    if block_element.count(other_player) == 1 && block_element.count("") == 2
+				    create_or_block = block_element.index("")
+				    move = block_win_array[indx][create_or_block]
+			    end
+			    #puts "#{move.inspect}"
+		    end
+	    end
+	    move
     end
 
     #checks for posible wins
@@ -150,7 +150,7 @@ class Unbeatable
     	move
     end
     def check_size(board)
-    	move = 10
+    	move = 10 
     	size.each do |element|
     		if board[element] == ""
     			move = element
