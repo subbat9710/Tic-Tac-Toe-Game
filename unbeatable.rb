@@ -20,8 +20,8 @@ class Unbeatable
         	move = check_block(board, currentplayer)
         elsif check_fork(board, currentplayer) < 10
          	move = check_fork(board, currentplayer)
-        # elsif block_fork(board, currentplayer) < 10
-        # 	move = block_fork(board, currentplayer)
+        elsif block_fork(board, currentplayer) < 10
+         	move = block_fork(board, currentplayer)
         elsif check_corner(board) < 10
         	move = check_corner(board)
         elsif check_center(board, center) < 10
@@ -50,36 +50,52 @@ class Unbeatable
 	def check_fork(board, currentplayer)
 		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 		win_array1 = map_board(board)
-		fork_line = []
-		fork_spot = []
-		i = []
-
-		win_array1.each_with_index do |element, indx|
+		fork_size = []
+		move = 10
+		
+        win_array1.each_with_index do |element, indx|
 			if element.count(marker) == 1 && element.count("") == 2
-			    fork_line = element
-			    i.push(indx)
+                create_or_block = element.index("")
+				move = win_array[indx][create_or_block]		
 			end
+               
+			#     fork_size.push(element) 
+			     puts "#{move.inspect}"
+			# 	move = win_array1[indx][fork_size]
+			# end
 		end
-		i.each do |indx|
-			fork_spot.push(win_array[indx])
-	    end
-	    fork_spot = fork_spot.flatten.sort
-	    conditional_array = []
-	    fork_spot.each do |spot|
-	    	if board[spot] == ""
-	    		conditional_array.push(spot)
-	    	end
-	    end
-	    if conditional_array.detect { |match| conditional_array.count(match) > 1 } == nil
-	        move = 10
-	    else
-	    	move = conditional_array.detect { |match| conditional_array.count(match) > 1 }
-	    end
-	    move
+		# fork_size = fork_size.flatten.sort
+	 #    fork_array = []
+	 #    fork_size.each do |size|
+	 #    	if board[size] = ""
+	 #    		fork_array.push(size)
+	 #    	end
+	 #    end
+	    # if fork_array.detect { |match| fork_array.count(match) > 1 } == nil
+	    # 	puts "#{fork_array}"
+	    # else
+	    # 	move = fork_array.detect { |match| fork_array.count(match) > 1 }
+	    # end
+	     move
 	end
 	def block_fork(board, currentplayer)
-		1
-	end
+		block_win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+		block_win_array1 = map_board(board)
+		move = 10
+		if marker == "o"
+			other_player = "x"
+		else
+			other_player = "o"
+		end
+		block_win_array1.each_with_index do |block_element, indx|
+			if block_element.count(other_player) == 1 && block_element.count("") == 2
+				create_or_block = block_element.index("")
+				move = block_win_array[indx][create_or_block]
+			end
+			#puts "#{move.inspect}"
+		end
+		move
+    end
 
     #checks for posible wins
 	def check_win(board, currentplayer)
@@ -112,7 +128,7 @@ class Unbeatable
  			# puts "#{element.count(currentplayer.marker)}"
  			if element.count(other_player) == 2 && element.count("") == 1
  				winner_or_block = element.index("")
- 				puts "#{winner_or_block}"
+ 				#puts "#{winner_or_block}"
  				move = win_array[indx][winner_or_block]
  			end
  		end
@@ -154,15 +170,3 @@ class Unbeatable
     	move
     end
 end
-
-
-
-
-
-
-
-
-
-
-
-
