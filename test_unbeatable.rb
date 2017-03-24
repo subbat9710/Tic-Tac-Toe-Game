@@ -84,15 +84,21 @@ class TestUnbeatable < Minitest::Test
 		board = ["x", "", "", "o", "x", "o", "", "x", "o"]
 		assert_equal(1, ai.check_size(board))
     end
-  #   def test_for_check_fork
-		# ai = Unbeatable.new("o")
-		# board = ["", "o", "", "", "o", "x", "", "x", ""]
-		# assert_equal(0, ai.check_fork(board))
-  #   def test_for_check_fork_position
-		# ai = Unbeatable.new("o")
-		# board = ["", "o", "", "", "x", "x", "o", "", "x"]
-		# assert_equal(0, ai.check_fork(board))
-  #   end
+    def test_for_check_fork
+		ai = Unbeatable.new("o")
+		board = ["", "o", "", "", "o", "x", "", "x", ""]
+		assert_equal(0, ai.check_fork(board, ai))
+	end
+    def test_for_check_fork_position
+		ai = Unbeatable.new("o")
+		board = ["", "x", "", "", "o", "x", "", "o", "x"]
+		assert_equal(6, ai.check_fork(board, ai))
+    end
+    def test_for_block_fork
+    	ai = Unbeatable.new("o")
+    	board = ["x", "", "", "", "o", "x", "", "", "x"]
+		assert_equal(1, ai.block_fork(board, ai))
+	end
 end
 
 
