@@ -37,7 +37,7 @@ class TestUnbeatable < Minitest::Test
 	def test_position_for_center
 		ai = Unbeatable.new("o")
 		board = ["o", "o", "", "", "", "x", "x", "o", "x"]
-		assert_equal(4, ai.check_center(board, ai))
+		assert_equal(4, ai.check_center(board))
 	end
 	def test_for_corner
 		ai = Unbeatable.new("o")
@@ -84,4 +84,30 @@ class TestUnbeatable < Minitest::Test
 		board = ["x", "", "", "o", "x", "o", "", "x", "o"]
 		assert_equal(1, ai.check_size(board))
     end
+  #   def test_for_check_fork
+		# ai = Unbeatable.new("o")
+		# board = ["", "o", "", "", "o", "x", "", "x", ""]
+		# assert_equal(0, ai.check_fork(board))
+  #   def test_for_check_fork_position
+		# ai = Unbeatable.new("o")
+		# board = ["", "o", "", "", "x", "x", "o", "", "x"]
+		# assert_equal(0, ai.check_fork(board))
+  #   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

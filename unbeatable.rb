@@ -18,6 +18,10 @@ class Unbeatable
         	move = check_win(board, currentplayer)
         elsif check_block(board, currentplayer) < 10 
         	move = check_block(board, currentplayer)
+        # elsif check_fork(board, currentplayer) < 10
+        # 	move = check_fork(board, currentplayer)
+        # elsif block_fork(board, currentplayer) < 10
+        # 	move = block_fork(board, currentplayer)
         elsif check_corner(board) < 10
         	move = check_corner(board)
         elsif check_center(board, center) < 10
@@ -41,8 +45,8 @@ class Unbeatable
 			                 [board[0], board[4], board[8]],
 			                 [board[2], board[4], board[6]]
 		                    ]
-	    end
-	    #checks for posible wins
+	end
+    #checks for posible wins
 	def check_win(board, currentplayer)
 		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
         win_array1 = map_board(board)
@@ -79,9 +83,9 @@ class Unbeatable
  		end
          move
  	end
- 	def check_center(board, center) 
+ 	def check_center(board) 
         move = 10
-        board[4] == ""
+        board[4] == ""    
         	move = 4
     end
         
