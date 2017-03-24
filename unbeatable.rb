@@ -24,8 +24,8 @@ class Unbeatable
          	move = block_fork(board, currentplayer)
         elsif check_corner(board) < 10
         	move = check_corner(board)
-        elsif check_center(board, center) < 10
-        	move = check_center(board, center)
+        elsif check_center(board) < 10
+        	move = check_center(board)
         elsif check_diags(board) < 10
         	move = check_diags(board)
         else check_size(board) < 10
@@ -136,8 +136,11 @@ class Unbeatable
  	end
  	def check_center(board) 
         move = 10
-        board[4] == ""    
+        puts "#{move}"
+        if board[4] == ""  
         	move = 4
+        end
+        move
     end
         
     def check_corner(board)
