@@ -136,7 +136,6 @@ class Unbeatable
  	end
  	def check_center(board) 
         move = 10
-        puts "#{move}"
         if board[4] == ""  
         	move = 4
         end
