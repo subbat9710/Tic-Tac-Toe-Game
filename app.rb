@@ -5,18 +5,16 @@ require_relative 'sequential.rb'
 require_relative 'random.rb'
 require_relative 'unbeatable.rb'
 
-class TicTacToeApp < Sinatra::Base
-
 enable :sessions
 
     get "/" do 
-	    session[:board] = TTTboard.new
+	    session[:board] = Board.new
 	    erb :tictactoe, :locals => {:game_msg => "", :board => session[:board].board}
 	end
 
 	get "/playervsplayer" do 
-		session[:player1] = Human.new("x", "Player1")
-		session[:player2] = Human.new("o","Player2")
+		session[:player1] = Player.new("x", "Player1")
+		session[:player2] = Player.new("o","Player2")
 		session[:currentplayer] = session[:player1]
 		game_msg = "Human Vs Human. Player 1, select your play"
 		game_err = ""
@@ -25,33 +23,33 @@ enable :sessions
 	end
 
 	get "/playervsseq" do
-		session[:player1] = Human.new("x", "Player1")
+		session[:player1] = Player.new("x", "Player1")
 		session[:player2] = Sequential.new("o")
 		session[:currentplayer] = session[:player1]
 		game_msg = "Human Vs Computer. Player1, select your play"
 		game_err = ""
 
-		erb :get_human, locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
+		erb :get_human, :locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
 	end
 
 	get "/playervsrandom" do 
-		session[:player1] = Human.new("x", "Player1")
+		session[:player1] = Player.new("x", "Player1")
 		session[:player2] = RandomPlayer.new("o")
 		session[:currentplayer] = session[:player1]
 		game_msg = "Human Vs RandomPlayer. Player1, select your play"
 		game_err = ""
 
-        erb :get_human, locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
+        erb :get_human, :locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
     end
 
     get "/playervsunbeatable" do 
-    	session[:player1] = Human.new("x", "Player1")
+    	session[:player1] = Player.new("x", "Player1")
     	session[:player2] = Unbeatable.new("o")
     	session[:currentplayer] = session[:player1]
     	game_msg = "Human Vs Genius Computer. Player1, select your play"
     	game_err = ""
 
-    	erb :get_human, locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
+    	erb :get_human, :locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
     end
 
     get "/randomvsrandom" do 
@@ -169,12 +167,12 @@ enable :sessions
     get "/display_result" do 
         if session[:board].stub_winner?
             game_msg = "\tHurray! #{session[:currentplayer].name} @ #{session[:currentplayer].marker} wins"
-        erb :display_win, locals => {:game_msg => game_msg, :board => session[:board].board}
+        erb :display_win, :locals => {:game_msg => game_msg, :board => session[:board].board}
         elsif session[:board].tie
     	    game_msg = "\tIt was tie!"
-        erb :display_result, locals => {:game_msg => game_msg, :board => session[:board].board}
+        erb :display_result, :locals => {:game_msg => game_msg, :board => session[:board].board}
         else
     	game_msg = "Try again"
         end
     end
-end
+#end

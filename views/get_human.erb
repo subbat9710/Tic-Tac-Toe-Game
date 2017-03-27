@@ -1,0 +1,24 @@
+<h3><%= game_msg %></h3><h3 class = "error"><%= game_err %></h3>
+
+<h3>Click on the untaken spot you want to mark</h3>
+<form method ="post" action ="get_human_move">
+<% move = 53 %>
+<table>
+    <tr>
+        <td class ="bottom right"><input class ="clickable" type ="submit" name ="move" value ="<%= board[0] %>"></td>
+        <td class ="bottom right"><input class ="clickable" type ="submit" name ="move" value ="<%= board[1] %>"></td>
+        <td class ="bottom"><input class ="clickable" type ="submit" name ="move" value ="<%= board[2] %>"></td>
+    </tr>
+    <tr>
+        <td class ="bottom right"><input class ="clickable" type ="submit" name ="move" value ="<%= board[3] %>"></td>
+        <td class ="bottom right"><input class ="clickable" type ="submit" name ="move" value ="<%= board[4] %>"></td>
+        <td class ="bottom"><input class ="clickable" type ="submit" name ="move" value ="<%= board[5] %>"></td>
+    </tr>
+    <tr>
+        <td class ="right"><input class ="clickable" type ="submit" name ="move" value ="<%= board[6] %>"></td>
+        <td class ="right"><input class ="clickable" type ="submit" name ="move" value ="<%= board[8] %>"></td>
+        <td <input class ="clickable" type ="submit" name ="move" value ="<%= board[8] %>"></td>
+    </tr>
+</table>
+</form>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href ="styles/styles.css" rel ="stylesheet">
+</head>
+
+<header>
+     <h1>Play TTTBoard</h1>
+</header>
+
+<body>
+<div class ="row">
+    <div class ="col-1 col-t1 menu">
+    <ul>
+        <li class ="bold">Human Options</li>
+        <li><a href ="/playervsplayer">Player vs Player</a></li>
+        <li><a href ="/playervsseq">Player vs Easy</a></li>
+        <li><a href ="/playervsrandom">Player vs Medium</a></li>
+        <li><a href ="/playervsunbeatable">Player vs Unbeatable</a></li>
+        <li class ="bold">Computer Vs Computer Options</li>
+        <li><a href ="/randomvsrandom">Random vs Random</a></li>
+        <li><a href ="/seqvsseq">Sequential vs Sequential</a></li>
+        <li><a href ="/seqvsunbeatable">Sequential vs Unbeatable</a></li>
+        <li><a href ="/ranvsunbeatable">Random vs Unbeatable</a></li>
+        <li class ="bold">No Win Situation</a></li>
+        <li><a href ="/unbeatablevsunbeatable">Unbeatable vs Unbeatable</a></li>
+        <li class ="bold">Play Again</li>
+        <li><a href ="/">Reset</a></li>
+    </ul>
+    </div>
+    </div class ="col-7 col-t12">
+          <%= yield %>
+    </div>
+    </div>
+</body>
+</html>
