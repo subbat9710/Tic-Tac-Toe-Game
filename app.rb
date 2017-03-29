@@ -13,28 +13,28 @@ enable :sessions
 	end
 
 	get "/playervsplayer" do 
-		session[:player1] = Player.new("x", "Player1")
-		session[:player2] = Player.new("o","Player2")
+		session[:player1] = Player.new("X", "Player1")
+		session[:player2] = Player.new("O","Player2")
 		session[:currentplayer] = session[:player1]
-		game_msg = "Human Vs Human. Player 1, select your play"
+		game_msg = "Human Vs Human. Player1, select your play"
 		game_err = ""
 
 		erb :get_human, :locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
 	end
 
 	get "/playervsseq" do
-		session[:player1] = Player.new("x", "Player1")
-		session[:player2] = Sequential.new("o")
+		session[:player1] = Player.new("X", "Player1")
+		session[:player2] = Sequential.new("O")
 		session[:currentplayer] = session[:player1]
-		game_msg = "Human Vs Computer. Player1, select your play"
+		game_msg = "Human Vs Sequential. Player1, select your play"
 		game_err = ""
 
 		erb :get_human, :locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
 	end
 
 	get "/playervsrandom" do 
-		session[:player1] = Player.new("x", "Player1")
-		session[:player2] = RandomPlayer.new("o")
+		session[:player1] = Player.new("X", "Player1")
+		session[:player2] = RandomPlayer.new("O")
 		session[:currentplayer] = session[:player1]
 		game_msg = "Human Vs RandomPlayer. Player1, select your play"
 		game_err = ""
@@ -43,70 +43,13 @@ enable :sessions
     end
 
     get "/playervsunbeatable" do 
-    	session[:player1] = Player.new("x", "Player1")
-    	session[:player2] = Unbeatable.new("o")
+    	session[:player1] = Player.new("X", "Player1")
+    	session[:player2] = Unbeatable.new("O")
     	session[:currentplayer] = session[:player1]
-    	game_msg = "Human Vs Genius Computer. Player1, select your play"
+    	game_msg = "Human Vs Computer. Player1, select your play"
     	game_err = ""
 
     	erb :get_human, :locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
-    end
-
-    get "/randomvsrandom" do 
-    	session[:player1] = RandomPlayer.new("x")
-    	session[:player2] = RandomPlayer.new("o")
-    	session[:currentplayer] = session[:player1]
-    	game_msg = "Random Vs Random. Click Move button to start"
-
-    	erb :get_random, :locals => {:game_msg => game_msg, :board => session[:board].board}
-    end
-
-    get "/seqvsseq" do 
-    	session[:player1] = Sequential.new("x")
-    	session[:player2] = Sequential.new("o")
-    	session[:currentplayer] = session[:player1]
-    	game_msg = "Sequential Vs Sequential. Click Move button to start"
-      
-        erb :get_random, :locals => {:game_msg => game_msg, :board => session[:board].board}
-    end
-
-    get "/seqvsunbeatable" do 
-    	session[:player1] = Sequential.new("x")
-    	session[:player2] = Unbeatable.new("o")
-    	session[:currentplayer] = session[:player1]
-    	game_msg = "Sequence Vs Unbeatable. Click Move button to start"
-
-    	erb :get_random, :locals => {:game_msg => game_msg, :board => session[:board].board}
-    end
-
-    get "/ranvsunbeatable" do 
-    	session[:player1] = RandomPlayer.new("x")
-    	session[:player2] = Unbeatable.new("o")
-    	session[:currentplayer] = session[:player1]
-    	game_msg = "RandomPlayer Vs Unbeatable. Click move button to start"
-
-    	erb :get_random, :locals => {:game_msg => game_msg, :board => session[:board].board}
-    end
-    
-    get "/unbeatablevsunbeatable" do 
-    	session[:player1] = Unbeatable.new("x")
-    	session[:player2] = Unbeatable.new("o")
-    	session[:currentplayer] = session[:player1]
-    	game_msg = "Unbeatable Vs Unbeatable. Click move button to start"
-
-    	erb :get_random, :locals => {:game_msg => game_msg, :board => session[:board].board}
-    end
-
-    post "/get_random_move" do 
-    	move = session[:currentplayer].get_move(session[:board], session[:currentplayer])
-    	session[:board].update_move(move, session[:currentplayer].marker)
-    	if session[:board].stub_winner? || session[:board].tie
-    		redirect "/display_result"
-    	end
-    	session[:currentplayer] = change_player(session[:currentplayer])
-    	game_msg = "Click Move button to next"
-
-        erb :get_random, :locals => {:game_msg => game_msg, :board => session[:board].board}
     end
 
     def switch_player(currentplayer)
@@ -175,4 +118,3 @@ enable :sessions
     	game_msg = "Try again"
         end
     end
-#end

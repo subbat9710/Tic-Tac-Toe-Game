@@ -1,0 +1,40 @@
+header {
+	text-align: center;
+}
+body {
+	text-align: center;
+	margin: auto;
+	font-family: 'menlo' sans-serif;
+	background-color: powderblue;
+}
+.main_title {
+	text-align: center;
+	color: blue;
+	margin-top: 40px;
+}
+#board {
+	margin: 0 auto;
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+.board-data {
+	background-color: white;
+	font-size: 30px;
+    border: none;
+}
+form {
+	text-align: center;
+	display: inline-block;
+	margin-top: 30px
+}
+.bottom_bar {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	text-align: center;
+	background-color: grey;
+}
+footer {
+	text-align: center;
+}
