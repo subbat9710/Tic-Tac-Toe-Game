@@ -19,9 +19,49 @@
             <li><a href="/playervsseq">Player vs Easy</a></li>
             <li><a href="/playervsrandom">Player vs Medium</a></li>
             <li><a href="/playervsunbeatable">Player vs Hard</a></li>
-            <li class="bold">Play Again</li>
+            <li class="bold"><h3>Play Again</h3></li>
             <li><a href="/">Reset</a></li>
         </ul>
+        <div>
+        <table id='board'>
+    <tr>
+        <td id='top-left'><%= board[0] %></td>
+        <td> | </td>
+        <td id='top-center'><%= board[1] %></td>
+         <td> | </td>
+        <td id='top-right'><%= board[2] %></td>
+    </tr>
+    <tr>
+       <td> - </td>
+       <td> - </td>
+       <td> - </td>
+       <td> - </td>
+       <td> - </td>
+    </tr>
+    <tr>
+        <td id='middle-left'><%= board[3] %></td>
+        <td> | </td>
+        <td id='center'><%= board[4] %></td>
+          <td> | </td>       
+        <td id='middle-right'><%= board[5] %></td>
+    </tr>
+    <tr>
+       <td> - </td>
+       <td> - </td>
+       <td> - </td>
+       <td> - </td>
+       <td> - </td>
+    </tr>
+
+    <tr>
+        <td id='bottom-left'><%= board[6] %></td>
+        <td> | </td>        
+        <td id='bottom-center'><%= board[7] %></td>
+        <td> | </td>        
+        <td id='bottom-right'><%= board[8] %></td>
+    </tr>
+</table>
+        </div>
         </div>
         </div class="col-7 col-t12">
             <%= yield %>

@@ -3,7 +3,7 @@ require_relative "console.rb"
 require_relative "random.rb"
 
 board = Board.new
-console = Console.new(board) 
+console = Console.new(board, @player1, @player2) 
 
 player1 = RandomPlayer.new("x")
 player2 = RandomPlayer.new("o")

@@ -5,11 +5,11 @@ require_relative "random.rb"
 
 #For randomplayer Vs player2
 board = Board.new
+player1 = RandomPlayer.new("x")
 player2 = RandomPlayer.new("o")
 currentplayer = player2
-move = player2.move(board, currentplayer)
 
-console = Console.new(board) 
+console = Console.new(board, player1, player2) 
 puts "Wellcome Player1, What is your name? "
 name = gets.chomp
 console.display_board(board.board) #this line display the board in the terminals.
@@ -22,7 +22,6 @@ while !console.game_over?
     if console.game_over?
         break
     end
-    move = player2.move(board, currentplayer)
     board.set_position(move, "o")
     console.display_board(board.board)
     end

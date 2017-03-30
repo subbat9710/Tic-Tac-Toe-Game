@@ -1,8 +1,8 @@
 require_relative "console.rb"
 
 board = Board.new
-player1 = Player.new("name", "x")
-player2 = Unbeatable.new("o")
+player1 = Player.new("Teela", "x")
+player2 = Player.new("Junu", "o")
 console = Console.new(board, player1, player2)
 
 while !console.game_over?

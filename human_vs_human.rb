@@ -15,7 +15,7 @@ player2 = Player.new(marker, 'o')
 puts "Hey, #{marker} Your symbol is 'o'"
 sleep 1
 currentplayer = player1
-console = Console.new(board) 
+console = Console.new(board, player1, player2) 
 console.display_board(board.board) #this line display the board in the terminals.
 while !console.game_over? 
     print "#{name}, enter your move: "

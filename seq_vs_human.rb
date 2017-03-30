@@ -4,11 +4,12 @@ require_relative "sequential.rb"
 require_relative "human.rb"
 
 board = Board.new
+player1 = Player.new("name", "x")
 player2 = Sequential.new("o")
 currentplayer = player2
 get_move = player2.get_move(board.board)
  
-console = Console.new(board) 
+console = Console.new(board, player1, player2) 
 puts "Wellcome Player1, What is your name? "
 name = gets.chomp
 console.display_board(board.board) #this line display the board in the terminals.
