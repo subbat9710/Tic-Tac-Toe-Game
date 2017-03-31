@@ -20,35 +20,32 @@ enable :sessions
 
 		erb :get_human, :locals => {:game_msg => game_msg, :board => session[:board].board}
 	end
-	# get "/playervsseq" do
-	# 	session[:player1] = Player.new("X", "Player1")
-	# 	session[:player2] = Sequential.new("O")
-	# 	session[:currentplayer] = session[:player1]
-	# 	game_msg = "Human Vs Sequential. Player1, select your play"
-	# 	game_err = ""
+	get "/playervsseq" do
+		session[:player1] = Player.new("Player1", "X")
+		session[:player2] = Sequential.new("O")
+		session[:currentplayer] = session[:player1]
+		game_msg = "Human Vs Sequential. Player1, select your play"
 
-	# 	erb :get_human, :locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
-	# end
+		erb :get_human, :locals => {:game_msg => game_msg, :board => session[:board].board}
+	end
 
-	# get "/playervsrandom" do 
-	# 	session[:player1] = Player.new("X", "Player1")
-	# 	session[:player2] = RandomPlayer.new("O")
-	# 	session[:currentplayer] = session[:player1]
-	# 	game_msg = "Human Vs RandomPlayer. Player1, select your play"
-	# 	game_err = ""
+	get "/playervsrandom" do 
+		session[:player1] = Player.new("Player1", "X")
+		session[:player2] = RandomPlayer.new("O")
+		session[:currentplayer] = session[:player1]
+		game_msg = "Human Vs RandomPlayer. Player1, select your play"
 
- #        erb :get_human, :locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
- #    end
+        erb :get_human, :locals => {:game_msg => game_msg, :board => session[:board].board}
+    end
 
- #    get "/playervsunbeatable" do 
- #    	session[:player1] = Player.new("X", "Player1")
- #    	session[:player2] = Unbeatable.new("O")
- #    	session[:currentplayer] = session[:player1]
- #    	game_msg = "Human Vs Computer. Player1, select your play"
- #    	game_err = ""
+    get "/playervsunbeatable" do 
+    	session[:player1] = Player.new("Player1", "X")
+    	session[:player2] = Unbeatable.new("O")
+    	session[:currentplayer] = session[:player1]
+    	game_msg = "Human Vs Computer. Player1, select your play"
 
- #    	erb :get_human, :locals => {:game_msg => game_msg, :game_err => game_err, :board => session[:board].board}
- #    end
+    	erb :get_human, :locals => {:game_msg => game_msg, :board => session[:board].board}
+    end
 
     def switch_player(currentplayer)
     	if session[:currentplayer] == session[:player1]
@@ -67,7 +64,7 @@ enable :sessions
     post "/get_human_move" do 
     	move = params[:move].keys.join.to_i
     	if session[:board].board[move] == ""
-            puts "move#{move.class}"               
+            #puts "move#{move.class}" to check for the board move               
     		move = move 
     	    redirect "/update_board?move=#{move}"
     	else
@@ -90,10 +87,10 @@ enable :sessions
     get "/get_move" do 
         if session[:currentplayer].class == Player
             redirect "/request_human_move"
-        else session[:currentplayer].class != Player
-            move = session[:currentplayer].get_move(session[:board], session[:currentplayer])
+        elsif session[:currentplayer].class != Player
+            move = session[:currentplayer].get_move(session[:board])
         end
-        redirect "/update_board?move="
+        redirect "/update_board?move=#{move}"
     end
 
     get "/switch_player" do 
@@ -108,12 +105,10 @@ enable :sessions
     get "/display_result" do 
         if session[:board].stub_winner?
             puts "wins"
-            game_msg = "\tWow! #{session[:currentplayer].name} @ #{session[:currentplayer].marker} wins"
+            game_msg = "\tWow! #{session[:currentplayer].name}(@ #{session[:currentplayer].marker}) wins"
         erb :display_win, :locals => {:game_msg => game_msg, :board => session[:board].board}
-        elsif session[:board].tie
-    	    game_msg = "\tIt was tie!"
+        else session[:board].tie
+    	    game_msg = "\tIt was tie!, Try Again"
         erb :display_result, :locals => {:game_msg => game_msg, :board => session[:board].board}
-        else
-    	game_msg = "Try again"
         end
     end

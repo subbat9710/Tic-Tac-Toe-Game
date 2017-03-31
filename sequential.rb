@@ -8,6 +8,6 @@ class Sequential
 	end
 
 	def get_move(board)
-		move_position = board.index("")
+		move_position = board.board.index("")
     end
 end

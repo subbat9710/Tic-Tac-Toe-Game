@@ -27,9 +27,9 @@ class Board
             x_counter = 0
             o_counter = 0
             index.each do |index_check|
-                if @board[index_check] == "X"
+                if @board[index_check] == "X"  #check for X in board
                     x_counter += 1
-                elsif @board[index_check] == "O"
+                elsif @board[index_check] == "O" #check for O in board
                     o_counter += 1
                 end
                 if x_counter == 3

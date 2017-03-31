@@ -36,14 +36,14 @@ class Unbeatable
 
 	def map_board(board)  #map board for win arrays
 		win_array1 = [
-			            [board[0], board[1], board[2]],
-			            [board[3], board[4], board[5]],
-			            [board[6], board[7], board[8]],
-			            [board[0], board[3], board[6]],
-			            [board[1], board[4], board[7]],
-			            [board[2], board[5], board[8]],
-			            [board[0], board[4], board[8]],
-			            [board[2], board[4], board[6]]
+			            [board.board[0], board.board[1], board.board[2]],
+			            [board.board[3], board.board[4], board.board[5]],
+			            [board.board[6], board.board[7], board.board[8]],
+			            [board.board[0], board.board[3], board.board[6]],
+			            [board.board[1], board.board[4], board.board[7]],
+			            [board.board[2], board.board[5], board.board[8]],
+			            [board.board[0], board.board[4], board.board[8]],
+			            [board.board[2], board.board[4], board.board[6]]
 		                   ]
 	end
 
@@ -74,7 +74,7 @@ class Unbeatable
 	    	count = 0
 	    	element.each do |indx|
 	    		#puts "#{board.inspect}"
-	    		if board[indx] == other_player
+	    		if board.board[indx] == other_player
 	    			#puts "#{marker}" #check for marker =>("o")
                     count += 1
                 end
@@ -136,7 +136,7 @@ class Unbeatable
  	end
  	def check_center(board) 
         move = 10
-        if board[4] == ""  
+        if board.board[4] == ""  
         	move = 4
         end
         move
@@ -145,7 +145,7 @@ class Unbeatable
     def check_corner(board)
     	move = 10
     	corner.each do |element|
-    		if board[element] == ""
+    		if board.board[element] == ""
     			move = element
     		end
     	end
@@ -154,7 +154,7 @@ class Unbeatable
     def check_size(board)
     	move = 10 
     	size.each do |element|
-    		if board[element] == ""
+    		if board.board[element] == ""
     			move = element
     		end
     	end
@@ -164,7 +164,7 @@ class Unbeatable
     	move = 10
     	diags.each do |element|
     		element.each do |indx|
-    			if board[indx] == ""
+    			if board.board[indx] == ""
     				move = indx
     			end
     		end

@@ -1,8 +1,8 @@
 require_relative "console.rb"
 
 board = Board.new
-player1 = Player.new("Teela", "x")
-player2 = Player.new("Junu", "o")
+player1 = Player.new("Teela", "X")
+player2 = Sequential.new("O")
 console = Console.new(board, player1, player2)
 
 while !console.game_over?
@@ -14,3 +14,5 @@ while !console.game_over?
     sleep 1
 end
 console.game_status
+
+#I play TTTboard game by this file using console.rb. 
