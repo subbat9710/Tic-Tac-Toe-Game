@@ -27,9 +27,9 @@ class Board
             x_counter = 0
             o_counter = 0
             index.each do |index_check|
-                if @board[index_check] == "x"
+                if @board[index_check] == "X"
                     x_counter += 1
-                elsif @board[index_check] == "o"
+                elsif @board[index_check] == "O"
                     o_counter += 1
                 end
                 if x_counter == 3
@@ -43,17 +43,8 @@ class Board
         end
         return winner 
     end
-    def winner
-        if stub_winner? 
-            puts "someone won"
-        end
-    end
     def tie
-        if stub_winner? == false && check_full? == true
-            puts "game is tie"
-            return true unless stub_winner?
-        end
-        return false
+        stub_winner? == false && check_full? == true 
     end
 end
 # board = Board.new

@@ -7,12 +7,12 @@ board = Board.new
 puts 'Wellcome. Player1, what is your name?'
 name = gets.chomp
 player1 = Player.new(name, 'x') 
-puts "Hey, #{name}. Your symbol is 'x'"
+puts "Hey, #{name}. Your symbol is 'X'"
 sleep 1
 puts 'Player2, what is your name?'
 marker = gets.chomp
 player2 = Player.new(marker, 'o')
-puts "Hey, #{marker} Your symbol is 'o'"
+puts "Hey, #{marker} Your symbol is 'O'"
 sleep 1
 currentplayer = player1
 console = Console.new(board, player1, player2) 
@@ -20,7 +20,7 @@ console.display_board(board.board) #this line display the board in the terminals
 while !console.game_over? 
     print "#{name}, enter your move: "
  	move = gets.chomp.to_i
-	board.set_position(move, "x")
+	board.set_position(move, "X")
 	console.display_board(board.board)
     sleep 1
     if console.game_over?
@@ -28,7 +28,7 @@ while !console.game_over?
     end
     print "#{marker}, enter your move: " 
     move = gets.chomp.to_i
-    board.set_position(move, "o")
+    board.set_position(move, "O")
     console.display_board(board.board)
     end
     if board.winner_of_game == "X"
