@@ -58,15 +58,6 @@ enable :sessions
  #    	end
  #    end
 
-    get "/get_move" do 
-        if session[:currentplayer].class == Player
-            redirect "/request_human_move"
-        else session[:currentplayer].class != Player
-            move = session[:currentplayer].get_move(session[:board], session[:currentplayer])
-        end
-        redirect "/update_board?move=#{move}"
-    end
-
     get "/request_human_move" do 
      	game_msg = "#{session[:currentplayer].name} , #{session[:currentplayer].marker} Select your play:"
 
@@ -74,18 +65,18 @@ enable :sessions
     end
 
     post "/get_human_move" do 
-    	move = params[:move].key.join.to_i
-    	if session[:board].board[move] == ""
+    	move = params[:move].keys.join.to_i
+    	if session[:board].board[move] << ""
             puts "move#{move.class}"               
     		move = move
-    	    redirect "/update_board?move#{move}" 
+    	    redirect "/update_board?move=#{move}"
     	else
     		game_msg = "#{session[:currentplayer].name} @ #{session[:currentplayer].marker}"
             erb :get_human, :locals => {:game_msg => game_msg, :board => session[:board].board}	
         end
     end
 
-    get "/update_board?" do 
+    get "/update_board" do 
         move = params[:move].to_i
         session[:board].set_position(move, session[:currentplayer].marker)
         if session[:board].stub_winner? || session[:board].tie
@@ -93,6 +84,15 @@ enable :sessions
         else
             redirect "/switch_player"
         end
+    end
+
+    get "/get_move" do 
+        if session[:currentplayer].class == Player
+            redirect "/request_human_move"
+        else session[:currentplayer].class != Player
+            move = session[:currentplayer].get_move(session[:board], session[:currentplayer])
+        end
+        redirect "/update_board?move="
     end
 
     get "/switch_player" do 
@@ -104,14 +104,14 @@ enable :sessions
             redirect "/get_move"
     end  
 
- #    get "/display_result" do 
- #        if session[:board].stub_winner?
- #            game_msg = "\tWow! #{session[:currentplayer].name} @ #{session[:currentplayer].marker} wins"
- #        erb :display_win, :locals => {:game_msg => game_msg, :board => session[:board].board}
- #        elsif session[:board].tie
- #    	    game_msg = "\tIt was tie!"
- #        erb :display_result, :locals => {:game_msg => game_msg, :board => session[:board].board}
- #        else
- #    	game_msg = "Try again"
- #        end
- #    end
+    get "/display_result" do 
+        if session[:board].stub_winner?
+            game_msg = "\tWow! #{session[:currentplayer].name} @ #{session[:currentplayer].marker} wins"
+        erb :display_win, :locals => {:game_msg => game_msg, :board => session[:board].board}
+        elsif session[:board].tie
+    	    game_msg = "\tIt was tie!"
+        erb :display_result, :locals => {:game_msg => game_msg, :board => session[:board].board}
+        else
+    	game_msg = "Try again"
+        end
+    end
