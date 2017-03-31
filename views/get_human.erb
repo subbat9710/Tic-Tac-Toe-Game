@@ -1,12 +1,11 @@
  <h3><%= game_msg %></h3> 
- <h3 class="error"><%= game_err %></h3>
 
 <h3>Click on the untaken spot you want to mark</h3> 
 <form action="get_human_move" method="post">
     <table id='board'>
         <tr>
             <td id='top-left'><input class='board-data' type='submit' name="move" value='<%= board[0] %>'></td>
-            <td id='top-center'><input class='board-data' type='submit' name="move" value='<%= board[1] %>'></td>
+            <td id='top-center'><input class='board-data' type='submit' name="move[1]" value='<%= board[1]%>'></td>
             <td id='top-right'><input class='board-data' type='submit' name="move" value='<%= board[2] %>'></td>
         </tr>
         <tr>

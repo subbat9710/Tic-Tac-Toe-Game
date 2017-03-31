@@ -10,7 +10,7 @@ class RandomPlayer
 		@currentplayer = currentplayer
         @name = "RandomPlayer"
 	end
-    def get_move(board)
+    def get_move(board, currentplayer)
         position = rand(0..8)
         if board[position] != "" 
             get_move(board)
