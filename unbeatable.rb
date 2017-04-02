@@ -117,10 +117,10 @@ class Unbeatable
  		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
         win_array1 = map_board(board)
  		move = 10
- 		if marker == "o"
-			other_player = "x"
+ 		if marker == "X"
+			other_player = "X"
 		else
-			other_player = "o"
+			other_player = "O"
 		end
 
  		win_array1.each_with_index do |element, indx|

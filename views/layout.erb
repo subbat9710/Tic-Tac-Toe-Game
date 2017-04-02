@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>App TicTacToe</title>
-        <link href ="styles/styles.css" rel ="stylesheet">
+        <link href ="css/styles.css" rel ="stylesheet">
     </head>
 
     <header>
@@ -11,7 +11,7 @@
     </header>
 
     <body>
-        <div id='board'>
+        <!-- <div id='board'> -->
         <ul>
             <li class="bold"><h3>Human Section</h3></li>
             <li><a href="/playervsplayer">Player vs Player</a></li>
@@ -19,52 +19,13 @@
             <li><a href="/playervsrandom">Player vs Medium</a></li>
             <li><a href="/playervsunbeatable">Player vs Hard</a></li>
             <li class="bold"><h3>Play Again</h3></li>
-            <li><a href="/">Reset</a></li>
+            <li><a href="/"><h3>Reset</h3></a></li>
         </ul>
-        <div>
-        <table id='board'>
-    <tr>
-        <td id='top-left'><%= board[0] %></td>
-        <td> | </td>
-        <td id='top-center'><%= board[1] %></td>
-         <td> | </td>
-        <td id='top-right'><%= board[2] %></td>
-    </tr>
-    <tr>
-       <td> - </td>
-       <td> - </td>
-       <td> - </td>
-       <td> - </td>
-       <td> - </td>
-    </tr>
-    <tr>
-        <td id='middle-left'><%= board[3] %></td>
-        <td> | </td>
-        <td id='center'><%= board[4] %></td>
-          <td> | </td>       
-        <td id='middle-right'><%= board[5] %></td>
-    </tr>
-    <tr>
-       <td> - </td>
-       <td> - </td>
-       <td> - </td>
-       <td> - </td>
-       <td> - </td>
-    </tr>
-
-    <tr>
-        <td id='bottom-left'><%= board[6] %></td>
-        <td> | </td>        
-        <td id='bottom-center'><%= board[7] %></td>
-        <td> | </td>        
-        <td id='bottom-right'><%= board[8] %></td>
-    </tr>
-</table>
+        <div class="footer">TTTBoard.org</div>
         </div>
         </div>
             <%= yield %>
         </div>
         </div>
     </body>
-    <footer><center>TTTBoard.org</center></footer>
 </html>

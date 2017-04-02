@@ -1,0 +1,48 @@
+body {
+	background-color: powderblue;
+}
+header {
+	color: grey;
+	text-align: center;
+}
+.board-data {
+	width: 100px;
+	height: 100px;
+	font: 80px arial, sans-serif;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#board {
+	padding: 0px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+#board tr td {
+	width: 100px;
+	height: 100px;
+	border: 1px solid;
+	font-size: 50px;
+	text-align: center;
+} 
+#board tr td:hover {
+	background: blue;
+	cursor: pointer;
+}
+.bottom_bar {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: grey;
+}
+
+.footer {
+	text-align: center;
+}
+form {
+	table-layout: center;
+	width: 100px
+	height: 100px;
+}
