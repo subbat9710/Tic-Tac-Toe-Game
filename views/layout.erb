@@ -5,26 +5,26 @@
         <title>App TicTacToe</title>
         <link href ="css/styles.css" rel ="stylesheet">
     </head>
-
-    <header>
-            <h1>Wellcome To TicTacToe</h1>
-    </header>
-
     <body>
-        <!-- <div id='board'> -->
-        <ul>
-            <li class="bold"><h3>Human Section</h3></li>
-            <li><a href="/playervsplayer">Player vs Player</a></li>
-            <li><a href="/playervsseq">Player vs Easy</a></li>
-            <li><a href="/playervsrandom">Player vs Medium</a></li>
-            <li><a href="/playervsunbeatable">Player vs Hard</a></li>
-            <li class="bold"><h3>Play Again</h3></li>
-            <li><a href="/"><h3>Reset</h3></a></li>
-        </ul>
-        <div class="footer">TTTBoard.org</div>
-        </div>
-        </div>
+        <div class ="wrapper">
+            <img class ="logo" css/src="ttt.png"> 
+            <h1 class ="topic">Wellcome To TicTacToe</h1>
+            <hr><hr>
+            <br>
+            <ul>
+                <l class="bold"><h2>Human Section</h2></l>
+                <li><a href="/playervsplayer">Player vs Player</a></li>
+                <li><a href="/playervsseq">Player vs Easy</a></li>
+                <li><a href="/playervsrandom">Player vs Medium</a></li>
+                <li><a href="/playervsunbeatable">Player vs Hard</a></li><br>
+                <l class="bold"><h2>Play Again</h2></l>
+                <a href="/"><h3>Reset</h3></a>
+            </ul>
+            <div>
+            </div>
             <%= yield %>
+            </div>
+           <!--  <div class="footer">TTTBoard.org</div> -->
         </div>
         </div>
     </body>
