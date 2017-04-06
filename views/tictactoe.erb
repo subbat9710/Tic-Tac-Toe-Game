@@ -1,1 +1,24 @@
-<!-- <h3>Choose from [HUMAN SECTION] to play your choice</h3> -->
+<h3>Choose from [HUMAN SECTION] to play your choice</h3><br>
+<p>Player1, Enter your name:</p>
+<form action ="name" method ="post">
+    
+    <input type ="text" name ="Player1" autofocus="autofocus" placeholder="Enter your name">
+    <input type ="submit">
+</form>
+<table id='board'>
+    <tr>
+        <td id='top-left'><%= board[0] %></td>
+        <td id='top-center'><%= board[1] %></td>
+        <td id='top-right'><%= board[2] %></td>
+    </tr>
+    <tr>
+        <td id='middle-left'><%= board[3] %></td>
+        <td id='center'><%= board[4] %></td>
+        <td id='middle-right'><%= board[5] %></td>
+    </tr>
+    <tr>
+        <td id='bottom-left'><%= board[6] %></td>
+        <td id='bottom-center'><%= board[7] %></td>
+        <td id='bottom-right'><%= board[8] %></td>
+    </tr>
+</table>

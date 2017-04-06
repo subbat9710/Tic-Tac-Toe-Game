@@ -29,6 +29,10 @@ enable :sessions
 		erb :get_human, :locals => {:game_msg => game_msg, :board => session[:board].board}
 	end
 
+    post "/name" do
+        name = params[:Player1]
+    end
+
 	get "/playervsrandom" do 
 		session[:player1] = Player.new("Player1", "X")
 		session[:player2] = RandomPlayer.new("O")

@@ -15,7 +15,7 @@ body {
 	padding: 2em;
 	margin: 0 auto;
 	width: 1100px;
-	height: 660px;
+	height: 670px;
 	background-color: #FFF;
 	background-repeat: no-repeat;
 	border-radius: 70px 70px 70px 70px;
@@ -33,7 +33,7 @@ hr {
 	border-radius: 10px 10px 0px 10px;
 }
 h1 {
-	font-size: 40px;
+	font-size: 50px;
 	margin-bottom: 0;
 	text-shadow: 4px 4px 5px red;
 	line-height: 90px;
@@ -56,15 +56,14 @@ li {
     transition: left linear 0.2s, width linear 0.2s, height linear 0.2s, transform linear 0.2s;
 }
 .logo:hover {
-/*	left: 25px;
-	width: 85px;
-	height: 85px;*/
 	-webkit-transform: rotate(360deg);
 }
+
 .board-data {
-	width: 100px;
-	height: 100px;
-	font: 80px arial, sans-serif;
+	width: 90px;
+	height: 90px;
+	font: 60px arial, sans-serif;
+	background-color: powderblue;
 }
 table {
 	border-collapse: collapse;
@@ -75,6 +74,8 @@ table {
 	padding: 0px;
 	margin: 0 auto;
 	margin-top: 0px;
+	background-color: powderblue;
+	border: 3px solid;
 }
 .bold {
 	color: blue;
@@ -90,16 +91,11 @@ table {
 	background: blue;
 	cursor: pointer;
 }
-/*form {
-	table-layout: center;
-	width: 100px
-	height: 100px;
-	font-size: 3em;*/
-}
-/*.footer {
+footer {
+	color: white;
 	text-align: center;
 	padding-top: 1px;
 	border: 1px solid;
-	margin-top: 40px;
-	background-color: #cccccc;
-}*/
+	margin-top: 10px;
+	background-color: green;
+}
