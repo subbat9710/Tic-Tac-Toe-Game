@@ -43,3 +43,16 @@ X1 → O3 → X7 → O4 → X9, then X can take 5 or 8 to win.
 X1 → O9 → X3 → O2 → X7, then X can take 4 or 5 to win.
 X1 → O2 → X5 → O9 → X7, then X can take 3 or 4 to win.
 X1 → O6 → X5 → O9 → X3, then X can take 2 or 7 to win.
+
+	def map_board(board)  #map board for win arrays
+		win_array1 = [
+			            [board.board[0], board.board[1], board.board[2]],
+			            [board.board[3], board.board[4], board.board[5]],
+			            [board.board[6], board.board[7], board.board[8]],
+			            [board.board[0], board.board[3], board.board[6]],
+			            [board.board[1], board.board[4], board.board[7]],
+			            [board.board[2], board.board[5], board.board[8]],
+			            [board.board[0], board.board[4], board.board[8]],
+			            [board.board[2], board.board[4], board.board[6]]
+		                   ]
+	end

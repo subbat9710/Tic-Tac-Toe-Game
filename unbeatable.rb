@@ -16,8 +16,8 @@ class Unbeatable
 	def get_move(board)  #loop for all the positions to move in available positions
         if check_win(board, currentplayer) < 10
         	move = check_win(board, currentplayer)
-        elsif check_block(board, currentplayer) < 10 
-        	move = check_block(board, currentplayer)
+        elsif block_win(board, currentplayer) < 10 
+        	move = block_win(board, currentplayer)
         elsif check_fork(board, currentplayer) < 10
          	move = check_fork(board, currentplayer)
         elsif block_fork(board, currentplayer) < 10
@@ -36,14 +36,14 @@ class Unbeatable
 
 	def map_board(board)  #map board for win arrays
 		win_array1 = [
-			            [board.board[0], board.board[1], board.board[2]],
-			            [board.board[3], board.board[4], board.board[5]],
-			            [board.board[6], board.board[7], board.board[8]],
-			            [board.board[0], board.board[3], board.board[6]],
-			            [board.board[1], board.board[4], board.board[7]],
-			            [board.board[2], board.board[5], board.board[8]],
-			            [board.board[0], board.board[4], board.board[8]],
-			            [board.board[2], board.board[4], board.board[6]]
+			            [board[0], board[1], board[2]],
+			            [board[3], board[4], board[5]],
+			            [board[6], board[7], board[8]],
+			            [board[0], board[3], board[6]],
+			            [board[1], board[4], board[7]],
+			            [board[2], board[5], board[8]],
+			            [board[0], board[4], board[8]],
+			            [board[2], board[4], board[6]]
 		                   ]
 	end
 
@@ -73,8 +73,8 @@ class Unbeatable
 		diags.each do |element|
 	    	count = 0
 	    	element.each do |indx|
-	    		#puts "#{board.inspect}"
-	    		if board.board[indx] == other_player
+	    		# puts "#{board.inspect}"
+	    		if board[indx] == other_player
 	    			#puts "#{marker}" #check for marker =>("o")
                     count += 1
                 end
@@ -113,7 +113,7 @@ class Unbeatable
         move
 	end
 	#blocks the posible wins
- 	def check_block(board, currentplayer)
+ 	def block_win(board, currentplayer)
  		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
         win_array1 = map_board(board)
  		move = 10
@@ -124,19 +124,21 @@ class Unbeatable
 		end
 
  		win_array1.each_with_index do |element, indx|
- 			# puts "#{element.inspect}"
- 			# puts "#{element.count(currentplayer.marker)}"
+ 			puts "#{board.inspect}"
+ 			#puts "#{element.count(currentplayer.marker)}"
  			if element.count(other_player) == 2 && element.count("") == 1
  				winner_or_block = element.index("")
  				#puts "#{winner_or_block}"
  				move = win_array[indx][winner_or_block]
  			end
+ 			#puts "#{move.inspect}"
  		end
-         move
+        move
  	end
+
  	def check_center(board) 
         move = 10
-        if board.board[4] == ""  
+        if board[4] == ""  
         	move = 4
         end
         move
@@ -145,16 +147,18 @@ class Unbeatable
     def check_corner(board)
     	move = 10
     	corner.each do |element|
-    		if board.board[element] == ""
+    		#puts "#{element.inspect}"
+    		if board[element] == ""
     			move = element
     		end
     	end
     	move
     end
+
     def check_size(board)
     	move = 10 
     	size.each do |element|
-    		if board.board[element] == ""
+            if board[element] == ""
     			move = element
     		end
     	end
@@ -164,7 +168,8 @@ class Unbeatable
     	move = 10
     	diags.each do |element|
     		element.each do |indx|
-    			if board.board[indx] == ""
+    			puts "#{indx.inspect}"
+    			if board[indx] == ""
     				move = indx
     			end
     		end
