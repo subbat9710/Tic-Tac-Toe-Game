@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TestSequential - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Minitest::Test
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-test_1_sequential">#test_1_sequential</a>
+    
+    <li ><a href="#method-i-test_2_sequential">#test_2_sequential</a>
+    
+    <li ><a href="#method-i-test_3_sequential">#test_3_sequential</a>
+    
+    <li ><a href="#method-i-test_4_sequential">#test_4_sequential</a>
+    
+    <li ><a href="#method-i-test_5_sequential">#test_5_sequential</a>
+    
+    <li ><a href="#method-i-test_6_sequential">#test_6_sequential</a>
+    
+    <li ><a href="#method-i-test_7_sequential">#test_7_sequential</a>
+    
+    <li ><a href="#method-i-test_8_sequential">#test_8_sequential</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TestSequential">
+  <h1 id="class-TestSequential" class="class">
+    class TestSequential
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-test_1_sequential" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_1_sequential</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_1_sequential-source">
+            <pre><span class="ruby-comment"># File test_sequential.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_1_sequential</span>
+        <span class="ruby-identifier">player</span> = <span class="ruby-constant">Sequential</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;x&quot;</span>)
+        <span class="ruby-identifier">board2</span> = <span class="ruby-constant">Board</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">board</span> = [<span class="ruby-string">&quot;x&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;o&quot;</span>,<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>]
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">player</span>.<span class="ruby-identifier">get_move</span>(<span class="ruby-identifier">board</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_2_sequential" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_2_sequential</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_2_sequential-source">
+            <pre><span class="ruby-comment"># File test_sequential.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_2_sequential</span>
+        <span class="ruby-identifier">player</span> = <span class="ruby-constant">Sequential</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;x&quot;</span>)
+        <span class="ruby-identifier">board2</span> = <span class="ruby-constant">Board</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">board</span> = [<span class="ruby-string">&quot;x&quot;</span>, <span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-string">&quot;o&quot;</span>,<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span>]
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">5</span>, <span class="ruby-identifier">player</span>.<span class="ruby-identifier">get_move</span>(<span class="ruby-identifier">board</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_3_sequential" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_3_sequential</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_3_sequential-source">
+            <pre><span class="ruby-comment"># File test_sequential.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_3_sequential</span>
+        <span class="ruby-identifier">player</span> = <span class="ruby-constant">Sequential</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;x&quot;</span>)
+        <span class="ruby-identifier">board2</span> = <span class="ruby-constant">Board</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">board</span> = [<span class="ruby-string">&quot;x&quot;</span>, <span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-string">&quot;o&quot;</span>,<span class="ruby-string">&quot;4&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;7&quot;</span>, <span class="ruby-string">&quot;8&quot;</span>]
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">6</span>, <span class="ruby-identifier">player</span>.<span class="ruby-identifier">get_move</span>(<span class="ruby-identifier">board</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_4_sequential" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_4_sequential</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_4_sequential-source">
+            <pre><span class="ruby-comment"># File test_sequential.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_4_sequential</span>
+        <span class="ruby-identifier">player</span> = <span class="ruby-constant">Sequential</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;x&quot;</span>)
+        <span class="ruby-identifier">board2</span> = <span class="ruby-constant">Board</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">board</span> = [<span class="ruby-string">&quot;x&quot;</span>, <span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;o&quot;</span>,<span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-string">&quot;7&quot;</span>, <span class="ruby-string">&quot;4&quot;</span>, <span class="ruby-string">&quot;8&quot;</span>]
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">2</span>, <span class="ruby-identifier">player</span>.<span class="ruby-identifier">get_move</span>(<span class="ruby-identifier">board</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_5_sequential" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_5_sequential</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_5_sequential-source">
+            <pre><span class="ruby-comment"># File test_sequential.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_5_sequential</span>
+        <span class="ruby-identifier">player</span> = <span class="ruby-constant">Sequential</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;x&quot;</span>)
+        <span class="ruby-identifier">board2</span> = <span class="ruby-constant">Board</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">board</span> = [<span class="ruby-string">&quot;x&quot;</span>, <span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;o&quot;</span>,<span class="ruby-string">&quot;6&quot;</span>, <span class="ruby-string">&quot;8&quot;</span>, <span class="ruby-string">&quot;7&quot;</span>, <span class="ruby-string">&quot;5&quot;</span>]
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">3</span>, <span class="ruby-identifier">player</span>.<span class="ruby-identifier">get_move</span>(<span class="ruby-identifier">board</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_6_sequential" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_6_sequential</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_6_sequential-source">
+            <pre><span class="ruby-comment"># File test_sequential.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_6_sequential</span>
+        <span class="ruby-identifier">player</span> = <span class="ruby-constant">Sequential</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;x&quot;</span>)
+        <span class="ruby-identifier">board2</span> = <span class="ruby-constant">Board</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">board</span> = [<span class="ruby-string">&quot;x&quot;</span>, <span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-string">&quot;&quot;</span>,<span class="ruby-string">&quot;5&quot;</span>, <span class="ruby-string">&quot;6&quot;</span>, <span class="ruby-string">&quot;7&quot;</span>, <span class="ruby-string">&quot;8&quot;</span>]
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">4</span>, <span class="ruby-identifier">player</span>.<span class="ruby-identifier">get_move</span>(<span class="ruby-identifier">board</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_7_sequential" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_7_sequential</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_7_sequential-source">
+            <pre><span class="ruby-comment"># File test_sequential.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_7_sequential</span>
+        <span class="ruby-identifier">player</span> = <span class="ruby-constant">Sequential</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;o&quot;</span>)
+        <span class="ruby-identifier">board2</span> = <span class="ruby-constant">Board</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">board</span> = [<span class="ruby-string">&quot;x&quot;</span>, <span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-string">&quot;&quot;</span>,<span class="ruby-string">&quot;5&quot;</span>, <span class="ruby-string">&quot;6&quot;</span>, <span class="ruby-string">&quot;7&quot;</span>, <span class="ruby-string">&quot;8&quot;</span>]
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">4</span>, <span class="ruby-identifier">player</span>.<span class="ruby-identifier">get_move</span>(<span class="ruby-identifier">board</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_8_sequential" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_8_sequential</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_8_sequential-source">
+            <pre><span class="ruby-comment"># File test_sequential.rb, line 49</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_8_sequential</span>
+            <span class="ruby-identifier">player</span> = <span class="ruby-constant">Sequential</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;o&quot;</span>)
+    <span class="ruby-identifier">board2</span> = <span class="ruby-constant">Board</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">board</span> = [<span class="ruby-string">&quot;o&quot;</span>, <span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-string">&quot;&quot;</span>,<span class="ruby-string">&quot;5&quot;</span>, <span class="ruby-string">&quot;6&quot;</span>, <span class="ruby-string">&quot;7&quot;</span>, <span class="ruby-string">&quot;8&quot;</span>]
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">2</span>, <span class="ruby-identifier">player</span>.<span class="ruby-identifier">get_move</span>(<span class="ruby-identifier">board</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

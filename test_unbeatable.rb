@@ -23,16 +23,21 @@ class TestUnbeatable < Minitest::Test
 		board = ["o", "o", "x", "o", "x", "o", "", "x", "x"]
 		assert_equal(6, ai.block_win(board, ai))
 	end
- #    def test_position_one_for_block
-	# 	ai = Unbeatable.new("o")
-	# 	board = ["o", "", "x", "o", "x", "o", "o", "x", "x"]
-	# 	assert_equal(1, ai.check_block(board, ai))
-	# end
-	# def test_position_eight_for_block
-	# 	ai = Unbeatable.new("o")
-	# 	board = ["o", "o", "x", "o", "x", "o", "x", "x", ""]
-	# 	assert_equal(8, ai.check_block(board, ai))
-	# end
+	def test_for_third_to_block_for_win
+		ai = Unbeatable.new("o")
+		board = ["o", "x", "o", "", "x", "x", "o", "o", "x"]
+		assert_equal(3, ai.block_win(board, ai))
+	end
+    def test_position_one_for_block
+		ai = Unbeatable.new("o")
+		board = ["o", "", "x", "o", "x", "o", "o", "x", "x"]
+		assert_equal(1, ai.block_win(board, ai))
+	end
+	def test_position_eight_for_block
+		ai = Unbeatable.new("o")
+		board = ["o", "o", "x", "x", "o", "o", "x", "x", ""]
+		assert_equal(8, ai.block_win(board, ai))
+	end
 	def test_position_for_center
 		ai = Unbeatable.new("o")
 		board = ["o", "o", "", "", "", "x", "x", "o", "x"]

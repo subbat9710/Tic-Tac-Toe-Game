@@ -17,21 +17,32 @@ class Unbeatable
         if check_win(board, currentplayer) < 10
         	move = check_win(board, currentplayer)
         elsif block_win(board, currentplayer) < 10 
+            puts "block_win"
         	move = block_win(board, currentplayer)
-        elsif check_fork(board, currentplayer) < 10
-         	move = check_fork(board, currentplayer)
+        elsif create_fork(board, currentplayer) < 10
+            move = create_fork(board, currentplayer)
         elsif block_fork(board, currentplayer) < 10
-         	move = block_fork(board, currentplayer)
-        elsif check_corner(board) < 10
-        	move = check_corner(board)
+            move = block_fork(board, currentplayer)
         elsif check_center(board) < 10
-        	move = check_center(board)
-        elsif check_diags(board) < 10
-        	move = check_diags(board)
-        else check_size(board) < 10
-        	move = check_size(board)
+            puts "check_center"
+            move = check_center(board)
+        elsif block_corner(board) < 10
+            puts "block_corner"
+        	move = block_corner(board)
+        elsif check_corner(board) < 10
+            puts "check_corner"
+        	move = check_corner(board)
+        elsif check_size(board) < 10
+            puts "check_size"
+            move = check_size(board)
+        elsif block_size(board) < 10
+            puts "check_size"
+         	move = block_size(board)
+         else check_diags(board) < 10
+            puts "check_diags" 
+            move = check_diags(board)
         end
-        move
+            move 
     end
 
 	def map_board(board)  #map board for win arrays
@@ -47,119 +58,156 @@ class Unbeatable
 		                   ]
 	end
 
-	def check_fork(board, currentplayer)
-		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-		win_array1 = map_board(board)
-		fork_size = []
-		move = 10
+    def create_fork(board, currentplayer)
+        win_array = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
+        win_array1 = map_board(board)
+        fork_size = []
+        move = 10
         win_array1.each_with_index do |element, indx|
-			if element.count(marker) == 1 && element.count("") == 2
-                create_or_block = element.index("")
-				move = win_array[indx][create_or_block]		
-			end
-			   #  puts "#{move.inspect}"
-		end
-	    move
-	end
-	def block_fork(board, currentplayer)
-		block_win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-		block_win_array1 = map_board(board)
-		move = 10
-		if marker == "o"
-			other_player = "x"
-		else
-			other_player = "o"
-		end
-		diags.each do |element|
-	    	count = 0
-	    	element.each do |indx|
-	    		# puts "#{board.inspect}"
-	    		if board[indx] == other_player
-	    			#puts "#{marker}" #check for marker =>("o")
+            if element.count(marker) == 1 && element.count("") == 2
+                move = win_array[indx][element.index("")]       
+            end
+               #  puts "#{move.inspect}"
+        end
+        move
+    end
+    def block_fork(board, currentplayer)
+        block_win_array = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
+        block_win_array1 = map_board(board)
+        move = 10
+        if marker == "O"
+            other_player = "X"
+        else
+            other_player = "O"
+        end
+        diags.each do |element|
+            count = 0
+            element.each do |indx|
+                # puts "#{board.inspect}"
+                if board[indx] == other_player
+                    #puts "#{marker}" #check for marker =>("o")
                     count += 1
                 end
                 if count == 2
-                	move = check_size(board)
+                    move = check_size(board)
                 end
-                #puts "#{move}" #check for the move
+                # puts "#{move}" check for the move
             end
             move
         end
         if move == 10
-		    block_win_array1.each_with_index do |block_element, indx|
-			    if block_element.count(other_player) == 1 && block_element.count("") == 2
-				    create_or_block = block_element.index("")
-				    move = block_win_array[indx][create_or_block]
-			    end
-			    #puts "#{move.inspect}"
-		    end
-	    end
-	    move
+            block_win_array1.each_with_index do |element, indx|
+                if element.count(other_player) == 1 && element.count("") == 2
+                    move = block_win_array[indx][element.index("")]
+                end
+                #puts "#{move.inspect}"
+            end
+        end
+        move
     end
 
     #checks for posible wins
 	def check_win(board, currentplayer)
-		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+		win_array = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
         win_array1 = map_board(board)
 		move = 10
 
 		win_array1.each_with_index do |element, indx|
 			if element.count(marker) == 2 && element.count("") == 1
-				winner_or_block = element.index("")
-				#puts "#{winner_or_block}"
-				move = win_array[indx][winner_or_block]
+				move = win_array[indx][element.index("")]
 			end
 		end
         move
 	end
 	#blocks the posible wins
  	def block_win(board, currentplayer)
- 		win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+ 		win_array = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
         win_array1 = map_board(board)
  		move = 10
- 		if marker == "X"
+ 		if marker == "O"
 			other_player = "X"
 		else
 			other_player = "O"
 		end
-
- 		win_array1.each_with_index do |element, indx|
- 			puts "#{board.inspect}"
- 			#puts "#{element.count(currentplayer.marker)}"
+        win_array1.each_with_index do |element, indx| # puts "#{board.inspect}"
+ 			# puts "#{element.count(currentplayer.marker)}"
  			if element.count(other_player) == 2 && element.count("") == 1
- 				winner_or_block = element.index("")
- 				#puts "#{winner_or_block}"
- 				move = win_array[indx][winner_or_block]
+ 				move = win_array[indx][element.index("")] 
  			end
- 			#puts "#{move.inspect}"
+ 		    # puts "#{move.inspect}"
  		end
         move
  	end
 
  	def check_center(board) 
-        move = 10
         if board[4] == ""  
         	move = 4
+        else
+        	move = 10
         end
         move
     end
-        
+
+    def block_corner(board)
+    	if marker == "O"
+    		other_player = "X"
+    	else
+    		other_player = "O"
+    	end
+
+    	if board[0] == other_player && board[8] == ""
+    		move = 8
+        elsif board[2] == other_player && board[6] == ""
+        	move = 6
+        elsif board[6] == other_player && board[2] == ""
+        	move = 2
+        elsif board[8] == other_player && board[0] == ""
+        	move = 0
+        else 
+        	move = 10 
+        end
+        move
+    end    
+       
     def check_corner(board)
     	move = 10
     	corner.each do |element|
     		#puts "#{element.inspect}"
     		if board[element] == ""
     			move = element
+                break
     		end
     	end
     	move
     end
+
+    def block_size(board)
+        if marker == "O"
+            other_player = "X"
+        else
+            other_player = "O"
+        end
+
+        if board[1] == other_player && board[7] == ""
+            move = 7
+        elsif board[3] == other_player && board[5] == ""
+            move = 5
+        elsif board[7] == other_player && board[1] == ""
+            move = 1
+        elsif board[5] == other_player && board[3] == ""
+            move = 3
+        else 
+            move = 10 
+        end
+        move
+    end 
 
     def check_size(board)
     	move = 10 
     	size.each do |element|
             if board[element] == ""
     			move = element
+                break
     		end
     	end
     	move
@@ -168,7 +216,6 @@ class Unbeatable
     	move = 10
     	diags.each do |element|
     		element.each do |indx|
-    			puts "#{indx.inspect}"
     			if board[indx] == ""
     				move = indx
     			end

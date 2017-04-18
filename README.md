@@ -56,3 +56,51 @@ X1 → O6 → X5 → O9 → X3, then X can take 2 or 7 to win.
 			            [board.board[2], board.board[4], board.board[6]]
 		                   ]
 	end
+
+		def create_fork(board, currentplayer)
+		win_array = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
+		win_array1 = map_board(board)
+		fork_size = []
+		move = 10
+        win_array1.each_with_index do |element, indx|
+			if element.count(marker) == 1 && element.count("") == 2
+				move = win_array[indx][element.index("")]		
+			end
+			   #  puts "#{move.inspect}"
+		end
+	    move
+	end
+	def block_fork(board, currentplayer)
+		block_win_array = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
+		block_win_array1 = map_board(board)
+		move = 10
+		if marker == "O"
+			other_player = "X"
+		else
+			other_player = "O"
+		end
+		diags.each do |element|
+	    	count = 0
+	    	element.each do |indx|
+	    		# puts "#{board.inspect}"
+	    		if board[indx] == other_player
+	    			#puts "#{marker}" #check for marker =>("o")
+                    count += 1
+                end
+                if count == 2
+                	move = check_size(board)
+                end
+                # puts "#{move}" check for the move
+            end
+            move
+        end
+        if move == 10
+		    block_win_array1.each_with_index do |element, indx|
+			    if element.count(other_player) == 1 && element.count("") == 2
+				    move = block_win_array[indx][element.index("")]
+			    end
+			    #puts "#{move.inspect}"
+		    end
+	    end
+	    move
+    end
