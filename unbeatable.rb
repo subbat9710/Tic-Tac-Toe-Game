@@ -17,29 +17,23 @@ class Unbeatable
         if check_win(board, currentplayer) < 10
         	move = check_win(board, currentplayer)
         elsif block_win(board, currentplayer) < 10 
-            puts "block_win"
+            #puts "block_win"
         	move = block_win(board, currentplayer)
         elsif create_fork(board, currentplayer) < 10
             move = create_fork(board, currentplayer)
         elsif block_fork(board, currentplayer) < 10
             move = block_fork(board, currentplayer)
         elsif check_center(board) < 10
-            puts "check_center"
+            #puts "check_center"
             move = check_center(board)
-        elsif block_corner(board) < 10
-            puts "block_corner"
-        	move = block_corner(board)
         elsif check_corner(board) < 10
-            puts "check_corner"
+            #puts "check_corner"
         	move = check_corner(board)
         elsif check_size(board) < 10
-            puts "check_size"
+            #puts "check_size"
             move = check_size(board)
-        elsif block_size(board) < 10
-            puts "check_size"
-         	move = block_size(board)
-         else check_diags(board) < 10
-            puts "check_diags" 
+        else check_diags(board) < 10
+            #puts "check_diags" 
             move = check_diags(board)
         end
             move 
@@ -47,14 +41,14 @@ class Unbeatable
 
 	def map_board(board)  #map board for win arrays
 		win_array1 = [
-			            [board[0], board[1], board[2]],
-			            [board[3], board[4], board[5]],
-			            [board[6], board[7], board[8]],
-			            [board[0], board[3], board[6]],
-			            [board[1], board[4], board[7]],
-			            [board[2], board[5], board[8]],
-			            [board[0], board[4], board[8]],
-			            [board[2], board[4], board[6]]
+			            [board.board[0], board.board[1], board.board[2]],
+			            [board.board[3], board.board[4], board.board[5]],
+			            [board.board[6], board.board[7], board.board[8]],
+			            [board.board[0], board.board[3], board.board[6]],
+			            [board.board[1], board.board[4], board.board[7]],
+			            [board.board[2], board.board[5], board.board[8]],
+			            [board.board[0], board.board[4], board.board[8]],
+			            [board.board[2], board.board[4], board.board[6]]
 		                   ]
 	end
 
@@ -84,7 +78,7 @@ class Unbeatable
             count = 0
             element.each do |indx|
                 # puts "#{board.inspect}"
-                if board[indx] == other_player
+                if board.board[indx] == other_player
                     #puts "#{marker}" #check for marker =>("o")
                     count += 1
                 end
@@ -105,7 +99,6 @@ class Unbeatable
         end
         move
     end
-
     #checks for posible wins
 	def check_win(board, currentplayer)
 		win_array = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
@@ -139,37 +132,16 @@ class Unbeatable
         move
  	end
 
- 	def check_center(board) 
+ 	def check_center(board) #check for empty center
         if board[4] == ""  
         	move = 4
         else
         	move = 10
         end
         move
-    end
-
-    def block_corner(board)
-    	if marker == "O"
-    		other_player = "X"
-    	else
-    		other_player = "O"
-    	end
-
-    	if board[0] == other_player && board[8] == ""
-    		move = 8
-        elsif board[2] == other_player && board[6] == ""
-        	move = 6
-        elsif board[6] == other_player && board[2] == ""
-        	move = 2
-        elsif board[8] == other_player && board[0] == ""
-        	move = 0
-        else 
-        	move = 10 
-        end
-        move
-    end    
+    end  
        
-    def check_corner(board)
+    def check_corner(board) #check for empty corner
     	move = 10
     	corner.each do |element|
     		#puts "#{element.inspect}"
@@ -179,31 +151,10 @@ class Unbeatable
     		end
     	end
     	move
-    end
-
-    def block_size(board)
-        if marker == "O"
-            other_player = "X"
-        else
-            other_player = "O"
-        end
-
-        if board[1] == other_player && board[7] == ""
-            move = 7
-        elsif board[3] == other_player && board[5] == ""
-            move = 5
-        elsif board[7] == other_player && board[1] == ""
-            move = 1
-        elsif board[5] == other_player && board[3] == ""
-            move = 3
-        else 
-            move = 10 
-        end
-        move
     end 
 
-    def check_size(board)
-    	move = 10 
+    def check_size(board)  #check for empty sizes
+    	move = 10  
     	size.each do |element|
             if board[element] == ""
     			move = element
@@ -212,7 +163,7 @@ class Unbeatable
     	end
     	move
     end
-    def check_diags(board)
+    def check_diags(board)   #check for empty diagonals
     	move = 10
     	diags.each do |element|
     		element.each do |indx|

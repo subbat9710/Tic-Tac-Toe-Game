@@ -8,10 +8,10 @@ class RandomPlayer
 	def initialize(marker)
 		@marker = marker
 		@currentplayer = currentplayer
-        @name = "RandomPlayer"
+        @name = "RandomPlayer" 
 	end
     def get_move(board)
-        position = rand(0..8)
+        position = rand(0..8)  #puts random spots on the board
         if board.board[position] != "" 
             get_move(board)
         else

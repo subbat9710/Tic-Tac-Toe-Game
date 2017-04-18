@@ -50,7 +50,7 @@ li {
 	width: 90px;
     position: absolute;
     top: 0px;
-    bottom: 575px;
+    bottom: 630px;
     margin: auto;
     margin-left: 0px;
     transition: left linear 0.2s, width linear 0.2s, height linear 0.2s, transform linear 0.2s;

@@ -91,7 +91,7 @@ class TestUnbeatable < Minitest::Test
     def test_for_check_fork
 		ai = Unbeatable.new("o")
 		board = ["", "x", "", "", "o", "x", "", "", ""]
-		assert_equal(2, ai.check_fork(board, ai))
+		assert_equal(2, ai.create_fork(board, ai))
 	end
     def test_for_block_fork_size
 		ai = Unbeatable.new("o")
@@ -99,7 +99,7 @@ class TestUnbeatable < Minitest::Test
 		assert_includes([1,3,5,7], ai.block_fork(board, ai))
     end
     def test_for_block_fork
-    	ai = Unbeatable.new("x")
+    	ai = Unbeatable.new("o")
     	board = ["", "x", "", "", "o", "x", "", "", ""]
 		assert_equal(2, ai.block_fork(board, ai))
 	end
