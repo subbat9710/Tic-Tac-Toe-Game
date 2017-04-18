@@ -54,6 +54,7 @@ li {
     margin: auto;
     margin-left: 0px;
     transition: left linear 0.2s, width linear 0.2s, height linear 0.2s, transform linear 0.2s;
+    position: fixed;
 }
 .logo:hover {
 	-webkit-transform: rotate(360deg);
