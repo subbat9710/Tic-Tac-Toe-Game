@@ -42,7 +42,7 @@ while !console.game_over?
         exit
     end
 
-
+ #This is the another way to play in the consloe between player vs player. 
 
 
 

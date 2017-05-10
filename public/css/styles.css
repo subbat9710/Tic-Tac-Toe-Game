@@ -1,17 +1,17 @@
 body {
-	background-image: url("nature.jpeg");
+	background-image: url("nature.jpeg");  /*Adjusting background color to the page*/
 	background-position: center center;
 	background-attachment: fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat;  /*Background image shouldn't be repeated*/
 }
 * {
 	margin: 0;
 	padding: 0;
 }
-.wrapper  {
+.wrapper  {           /*Creates different wrapper to the layout */
 	padding: 2em;
 	margin: 0 auto;
 	width: 1100px;
@@ -45,7 +45,7 @@ a {
 li {
 	margin-left: 20px;
 }
-.logo {
+.logo {             /*adjusting different design to the logo*/
 	height: 90px;
 	width: 90px;
     position: absolute;
@@ -56,11 +56,11 @@ li {
     transition: left linear 0.2s, width linear 0.2s, height linear 0.2s, transform linear 0.2s;
     position: fixed;
 }
-.logo:hover {
+.logo:hover {       /*enable roations to logo. When clicks at logo it rotates*/
 	-webkit-transform: rotate(360deg);
 }
 
-.board-data {
+.board-data {      
 	width: 90px;
 	height: 90px;
 	font: 60px arial, sans-serif;
@@ -71,7 +71,7 @@ table {
 	border-spacing: 0;
 	border: 3px;
 }
-#board {              
+#board {           
 	padding: 0px;
 	margin: 0 auto;
 	margin-top: 0px;

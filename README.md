@@ -1,46 +1,19 @@
 # TTTboard
-Further details
-Consider a board with the nine positions numbered as follows:
+Setting up the Tic Tac Toe Game.
+    1. Setup the board
+    2. Set positons(also mark position)
+    3. Check for positons whether it is empty or full
+    4. Check whether the boad is full or not
+    5. If boad is full and check for winner, loser and tie
 
-1	2	3
-4	5	6
-7	8	9
-When X plays 1 as their opening move, then O should take 5. Then X takes 9 (in this situation, O should not take 3 or 7, O should take 2, 4, 6 or 8):
-
-X1 → O5 → X9 → O2 → X8 → O7 → X3 → O6 → X4, this game will be a draw.
-or 6 (in this situation, O should not take 4 or 7, O should take 2, 3, 8 or 9. In fact, taking 9 is the best move, since a non-perfect player X may take 4, then O can take 7 to win).
-
-X1 → O5 → X6 → O2 → X8, then O should not take 3, or X can take 7 to win, and O should not take 4, or X can take 9 to win, O should take 7 or 9.
-X1 → O5 → X6 → O2 → X8 → O7 → X3 → O9 → X4, this game will be a draw.
-X1 → O5 → X6 → O2 → X8 → O9 → X4 (7) → O7 (4) → X3, this game will be a draw.
-X1 → O5 → X6 → O3 → X7 → O4 → X8 (9) → O9 (8) → X2, this game will be a draw.
-X1 → O5 → X6 → O8 → X2 → O3 → X7 → O4 → X9, this game will be a draw.
-X1 → O5 → X6 → O9, then X should not take 4, or O can take 7 to win, X should take 2, 3, 7 or 8.
-X1 → O5 → X6 → O9 → X2 → O3 → X7 → O4 → X8, this game will be a draw.
-X1 → O5 → X6 → O9 → X3 → O2 → X8 → O4 (7) → X7 (4), this game will be a draw.
-X1 → O5 → X6 → O9 → X7 → O4 → X2 (3) → O3 (2) → X8, this game will be a draw
-X1 → O5 → X6 → O9 → X8 → O2 (3, 4, 7) → X4/7 (4/7, 2/3, 2/3) → O7/4 (7/4, 3/2, 3/2) → X3 (2, 7, 4), this game will be a draw.
-In both of these situations (X takes 9 or 6 as second move), X has a {\displaystyle {\frac {1}{3}}} {\frac {1}{3}} property to win.
-
-If X is not a perfect player, X may take 2 or 3 as second move. Then this game will be a draw, X cannot win.
-
-X1 → O5 → X2 → O3 → X7 → O4 → X6 → O8 (9) → X9 (8), this game will be a draw.
-X1 → O5 → X3 → O2 → X8 → O4 (6) → X6 (4) → O9 (7) → X7 (9), this game will be a draw.
-If X plays 1 opening move, and O is not a perfect player, the following may happen:
-
-Although O takes the only good position (5) as first move, but O takes a bad position as second move:
-
-X1 → O5 → X9 → O3 → X7, then X can take 4 or 8 to win.
-X1 → O5 → X6 → O4 → X3, then X can take 2 or 9 to win.
-X1 → O5 → X6 → O7 → X3, then X can take 2 or 9 to win.
-Although O takes good positions as the first two moves, but O takes a bad position as third move
-
-X1 → O5 → X6 → O2 → X8 → O3 → X7, then X can take 4 or 9 to win.
-X1 → O5 → X6 → O2 → X8 → O4 → X9, then X can take 3 or 7 to win.
-O takes a bad position as first move (except of 5, all other positions are bad):
-
-X1 → O3 → X7 → O4 → X9, then X can take 5 or 8 to win.
-X1 → O9 → X3 → O2 → X7, then X can take 4 or 5 to win.
-X1 → O2 → X5 → O9 → X7, then X can take 3 or 4 to win.
-X1 → O6 → X5 → O9 → X3, then X can take 2 or 7 to win.
-
+Basic strategy for Unbeatable Tic Tac Toe games
+    Win: If the player has two in a row, they can place a third to get three in a row.
+    Block: If the opponent has two in a row, the player must play the third themselves to block the opponent.
+    Fork: Create an opportunity where the player has two threats to win (two non-blocked lines of 2).
+    Blocking an opponent's fork:
+    Option 1: The player should create two in a row to force the opponent into defending, as long as it doesn't result in them creating a fork. For example, if "X" has a corner, "O" has the center, and "X" has the opposite corner as well, "O" must not play a corner in order to win. (Playing a corner in this scenario creates a fork for "X" to win.)
+    Option 2: If there is a configuration where the opponent can fork, the player should block that fork.
+    Center: A player marks the center. (If it is the first move of the game, playing on a corner gives "O" more opportunities to make a mistake and may therefore be the better choice; however, it makes no difference between perfect players.)
+    Opposite corner: If the opponent is in the corner, the player plays the opposite corner.
+    Empty corner: The player plays in a corner square.
+    Empty side: The player plays in a middle square on any of the 4 sides.

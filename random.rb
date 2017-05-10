@@ -10,9 +10,9 @@ class RandomPlayer
 		@currentplayer = currentplayer
         @name = "RandomPlayer" 
 	end
-    def get_move(board)
+    def get_move(board) 
         position = rand(0..8)  #puts random spots on the board
-        if board.board[position] != "" 
+        if board.board[position] != "" #if board spots aren't empty, it moves to empty spots
             get_move(board)
         else
           position

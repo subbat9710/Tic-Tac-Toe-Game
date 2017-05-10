@@ -6,7 +6,7 @@ class Board
         @winner_of_game = nil
     end
 
-    def set_position(position, marker)
+    def set_position(position, marker)  
        @board[position] = marker  
     end
 
@@ -17,7 +17,7 @@ class Board
             false   #return false for the free position
         end
     end
-    def check_full?()
+    def check_full?()  
         @board.count("") == 0 
     end
     def stub_winner? #check if player won the game
@@ -43,8 +43,8 @@ class Board
         end
         return winner 
     end
-    def tie
-        stub_winner? == false && check_full? == true 
+    def tie #when game has full board marked and has no winner 
+        stub_winner? == false && check_full? == true  
     end
 end
 # board = Board.new
