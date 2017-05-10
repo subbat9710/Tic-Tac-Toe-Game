@@ -17,3 +17,5 @@ Basic strategy for Unbeatable Tic Tac Toe games
     Opposite corner: If the opponent is in the corner, the player plays the opposite corner.
     Empty corner: The player plays in a corner square.
     Empty side: The player plays in a middle square on any of the 4 sides.
+
+  ->  Here is my link for the TTTboard https://teelatictactoe.herokuapp.com/
