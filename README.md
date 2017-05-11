@@ -1,4 +1,6 @@
 # TTTboard
+Project: Creating a Tic Tac Toe Game.
+
 Setting up the Tic Tac Toe Game.
 
 1 Setup the board
