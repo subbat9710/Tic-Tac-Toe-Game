@@ -1,9 +1,14 @@
 # TTTboard
 Setting up the Tic Tac Toe Game.
+
 1 Setup the board
+
 2 Set positons(also mark position)
+
 3 Check for positons whether it is empty or full
+
 4 Check whether the boad is full or not
+
 5 If boad is full and check for winner, loser and tie
 
 Basic strategy for Unbeatable Tic Tac Toe games
