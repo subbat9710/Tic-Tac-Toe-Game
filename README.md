@@ -12,6 +12,7 @@ Setting up the Tic Tac Toe Game.
 5 If boad is full and check for winner, loser and tie
 
 Basic strategy for Unbeatable Tic Tac Toe games
+
 Win: If the player has two in a row, they can place a third to get three in a row.
 Block: If the opponent has two in a row, the player must play the third themselves to block the opponent.
 Fork: Create an opportunity where the player has two threats to win (two non-blocked lines of 2).
