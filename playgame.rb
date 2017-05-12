@@ -2,7 +2,7 @@ require_relative "console.rb"
 
 board = Board.new
 player1 = Player.new("Teela", "x")
-player2 = Unbeatable.new("o")
+player2 = RandomPlayer.new("o")
 console = Console.new(board, player1, player2)
 
 while !console.game_over? #while game is not over it continue palying
