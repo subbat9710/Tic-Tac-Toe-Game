@@ -29,5 +29,7 @@ Option 1: The player should create two in a row to force the opponent into defen
     Opposite corner: If the opponent is in the corner, the player plays the opposite corner.
     Empty corner: The player plays in a corner square.
     Empty side: The player plays in a middle square on any of the 4 sides.
+   
+For more references: https://en.wikipedia.org/wiki/Tic-tac-toe
 
   ->  Here is my link for the TTTboard https://teelatictactoe.herokuapp.com/
