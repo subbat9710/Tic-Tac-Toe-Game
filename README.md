@@ -1,6 +1,10 @@
 # TTTboard
 -- Project: Creating a Tic Tac Toe Game ---
 
+->To run the app, try $ ruby app.rb in your terminal.
+
+-> rackup required to load on port 4567
+
 Setting up the Tic Tac Toe Game.
 
 1 Setup the board
