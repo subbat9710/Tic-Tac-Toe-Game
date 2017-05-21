@@ -1,5 +1,5 @@
 require_relative "console.rb"
-
+ 
 board = Board.new
 player1 = Player.new("Teela", "x")
 player2 = RandomPlayer.new("o")
