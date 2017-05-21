@@ -1,15 +1,17 @@
 # TTTboard
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 --- Project: Creating a Tic Tac Toe Game --- 
 Descriptions: This project is totally about the Tic Tac Toe game. There are three main features of the game. First about the human. Human plays against Human. Second about Human plays against sequential(computer playes sequently). It also called easy game in this project. Third about human plays against Random player(computer plays randomly). It also called medium game in this project. Last or fourth is about the Human plays against Unbeatable(Computer plays unbeatable. It means impossible to win the computer). This section also called Hard game in this project.
 
 Setting up the Tic Tac Toe Game.
+=======
 1 Setup the board
+
 2 Set positons(also mark position)
+
 3 Check for positons whether it is empty or full
+
 4 Check whether the boad is full or not
+
 5 If boad is full and check for winner, loser and tie
 
 Basic strategy for Unbeatable Tic Tac Toe games
