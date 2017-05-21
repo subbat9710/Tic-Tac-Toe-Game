@@ -2,7 +2,7 @@ require "minitest/autorun"
 require_relative "console.rb"
 require_relative "board.rb"
 require_relative "human.rb"
-
+ 
 class TestConsole < Minitest::Test
 	
     def test_name1_as_current_player
