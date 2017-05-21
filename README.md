@@ -1,5 +1,6 @@
 # TTTboard
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 --- Project: Creating a Tic Tac Toe Game --- 
 
@@ -13,6 +14,13 @@ Setting up the Tic Tac Toe Game.
 Basic strategy for Unbeatable Tic Tac Toe games
 =======
 Project: Creating a Tic Tac Toe Game.
+=======
+-- Project: Creating a Tic Tac Toe Game ---
+
+->To run the app, try $ ruby app.rb in your terminal.
+
+-> rackup required to load on port 4567
+>>>>>>> 755e99c96d6b2b782bcdb669204b943fd2adbbe3
 
 Setting up the Tic Tac Toe Game.
 
@@ -48,6 +56,8 @@ Empty side: The player plays in a middle square on any of the 4 sides.
     Opposite corner: If the opponent is in the corner, the player plays the opposite corner.
     Empty corner: The player plays in a corner square.
     Empty side: The player plays in a middle square on any of the 4 sides.
+   
+For more references: https://en.wikipedia.org/wiki/Tic-tac-toe
 
   ->  Here is my link for the TTTboard https://teelatictactoe.herokuapp.com/
 >>>>>>> f7b62400a19489f16bbc3bcaffb07d93e00c783b
