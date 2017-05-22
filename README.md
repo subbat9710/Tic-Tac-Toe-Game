@@ -3,8 +3,7 @@
 
 Descriptions: This project is totally about the Tic Tac Toe game. There are four main features of the game. First about the human. Human plays against Human. Second about Human plays against sequential(computer playes sequently). It also called easy game in this project. Third about human plays against Random player(computer plays randomly). It also called medium game in this project. Last or fourth is about the Human plays against Unbeatable(Computer plays unbeatable. It means impossible to win the computer). This section also called Hard game in this project.
 
-Setting up Tic Tac Toe Game.
-=======
+##Setting up Tic Tac Toe Game.
 1 Setup the board
 
 2 Set positons(also mark position)
@@ -19,8 +18,7 @@ Setting up Tic Tac Toe Game.
 
 -> rackup required to load on port 4567(mac)
 
-Basic strategy for Unbeatable Tic Tac Toe games
-=======
+##Basic strategy for Unbeatable Tic Tac Toe games
 Win: If the player has two in a row, they can place a third to get three in a row.
 Block: If the opponent has two in a row, the player must play the third themselves to block the opponent.
 Fork: Create an opportunity where the player has two threats to win (two non-blocked lines of 2).
