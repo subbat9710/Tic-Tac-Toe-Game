@@ -1,102 +1,45 @@
-body {
-	background-image: url("nature.jpeg");  /*Adjusting background color to the page*/
-	background-position: center center;
-	background-attachment: fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	background-repeat: no-repeat;  /*Background image shouldn't be repeated*/
-}
 * {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-.wrapper  {           /*Creates different wrapper to the layout */
-	padding: 2em;
-	margin: 0 auto;
-	width: 1100px;
-	height: 670px;
-	background-color: #FFF;
-	background-repeat: no-repeat;
-	border-radius: 70px 70px 70px 70px;
-	background: linear-gradient(white, black);
-	opacity: 0.9;
-}
-hr {
-	border-style: solid;
-}
-.topic {
-	color: black;
-	background-color: orange;
-	text-align: center;
-	bottom: 600px;
-	border-radius: 10px 10px 0px 10px;
-}
-h1 {
-	font-size: 50px;
-	margin-bottom: 0;
-	text-shadow: 4px 4px 5px red;
-	line-height: 90px;
-}
-a {
-	color: darkgreen;
-    font-size: 1.2em;
+body {
+	overflow-x: hidden;
+	font-family: 'Open Sans', sans-serif;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased;
 }
 li {
-	margin-left: 20px;
+	list-style: none;
+	display: inline-block;
 }
-.logo {             /*adjusting different design to the logo*/
-	height: 90px;
-	width: 90px;
-    position: absolute;
-    top: 0px;
-    bottom: 630px;
-    margin: auto;
-    margin-left: 0px;
-    transition: left linear 0.2s, width linear 0.2s, height linear 0.2s, transform linear 0.2s;
-    position: fixed;
+a {
+	text-decoration: none;
+	transition: all 500ms ease-in-out;
 }
-.logo:hover {       /*enable roations to logo. When clicks at logo it rotates*/
-	-webkit-transform: rotate(360deg);
+a:hover,
+a:active {
+	text-decoration: none;
 }
-
-.board-data {      
-	width: 90px;
-	height: 90px;
-	font: 60px arial, sans-serif;
-	background-color: powderblue;
+h1,
+h4 {
+	font-family: 'PT Sans Narrow', Aerial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	border: 3px;
-}
-#board {           
-	padding: 0px;
-	margin: 0 auto;
-	margin-top: 0px;
-	background-color: powderblue;
-	border: 3px solid;
-}
-.bold {
-	color: blue;
-}
-#board tr td {        
-	width: 100px;
-	height: 100px;
-	border: 3px solid;
-	font-size: 3em;
-	text-align: center;
-} 
-#board tr td:hover {
-	background: blue;
-	cursor: pointer;
-}
-footer {
-	color: white;
-	text-align: center;
-	padding-top: 1px;
-	border: 1px solid;
+/*header*/
+.header {
+	position: relative;
+	padding: 30px 0 30px;
 	margin-top: 10px;
-	background-color: green;
+	color: #000;
+	text-align: center;
+}
+/*options*/
+
+/*footer*/
+.footer {
+	padding: 8px;
+	color: #cccccc;
+	background: #222222;
+	text-align: center;
 }
