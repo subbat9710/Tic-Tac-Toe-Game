@@ -34,7 +34,36 @@ h4 {
 	color: #000;
 	text-align: center;
 }
-/*options*/
+/*table*/
+.square {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	font-size: 40px;
+}
+.v {
+	border-left: 4px solid #000;
+	border-right: 4px solid #000;
+}
+.h {
+	border-top: 4px solid #000;
+	border-bottom: 4px solid #000;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+input::-moz-focus-inner {
+  border: 0;
+}
+.tinput {
+	background: rgba(0,0,0,0);
+	outline: none;
+	font-size: 40px;
+	border: none;
+}
 
 /*footer*/
 .footer {
@@ -42,4 +71,5 @@ h4 {
 	color: #cccccc;
 	background: #222222;
 	text-align: center;
+	margin-top: 10px;
 }
