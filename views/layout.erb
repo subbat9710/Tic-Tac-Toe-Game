@@ -22,26 +22,29 @@
             <div id="header" class="header">
                 <div class="container">
                     <div class="row">
-                        <h1 class ="topic">Wellcome To TicTacToe</h1>
+                        <h1 class ="topic">Wellcome To TicTacToe</h1><hr>
                     </div>
                 </div>
             </div>
         <!--End Header -->
             <div id="options" class="options">
                 <div class="container">
-                    <div class="row">
-                        <l class="bold"><h2>Human Section</h2></l>
+                    <div>
+                        <%= yield %>
+                    </div>
+                    <hr>
+                    <div class="select">
+                        <h3>Select to Play</h3>
                         <ul class="list-group">
                             <li><a id ="pp" class="list-group-item list-group-item-warning" href="/playervsplayer">Player vs Player</a></li>
                             <li><a id ="ps" class="list-group-item list-group-item-success" href="/playervsseq">Player vs Easy</a></li>
                             <li><a id ="pr" class="list-group-item list-group-item-info" href="/playervsrandom">Player vs Medium</a></li>
                             <li><a id ="pu" class="list-group-item list-group-item-danger" href="/playervsunbeatable">Player vs Impossible</a></li>
-                            <l class="bold"><h2>Play Again</h2></l>
-                            <a href="/"><h3>Reset</h3></a>
-                        </ul>       
-                    <div>
-                        <%= yield %>
+                        </ul>
+                        <a class="reset" href="/">Play Again</a>
                     </div>
+                </div>
+            </div>       
 
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -52,12 +55,5 @@
                 new WOW().init();
             </script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-            <!--footer-->
-           <!--  <div id="footer" class="footer">
-                <div class="container">
-                    <p>Design By Teela Ram Subba, Copyright &copy; 2017</p>
-                </div>
-            </div> -->
         </body>
     </html>

@@ -1,19 +1,28 @@
-<h3><%= game_msg %></h3>
+<!DOCTYPE html>
+<html>
+    <body>
+         <table id='board'>
+            <tr id="row1">
+                <td class="square"><%= board[0] %></td>
+                <td class="square v"><%= board[1] %></td>
+                <td class="square"><%= board[2] %></td>
+            </tr>
+            <tr id="row2">
+                <td class="square h"><%= board[3] %></td>
+                <td class="square v h"><%= board[4] %></td>
+                <td class="square h"><%= board[5] %></td>
+            </tr>
+            <tr id="row3">
+                <td class="square"><%= board[6] %></td>
+                <td class="square v"><%= board[7] %></td>
+                <td class="square"><%= board[8] %></td>
+            </tr>
+        </table><hr>
+        <div>
+            <h3><%= game_msg %></h3>
+        </div>
+    </body>
+</html>
 
-<table id='board'>
-    <tr id="row1">
-        <td id='top-left' class="square"><%= board[0] %></td>
-        <td id='top-center' class="square v"><%= board[1] %></td>
-        <td id='top-right' class="square"><%= board[2] %></td>
-    </tr>
-    <tr id="row2">
-        <td id='middle-left' class="square h"><%= board[3] %></td>
-        <td id='center' class="square v h"><%= board[4] %></td>
-        <td id='middle-right' class="square h"><%= board[5] %></td>
-    </tr>
-    <tr id="row3">
-        <td id='bottom-left' class="square"><%= board[6] %></td>
-        <td id='bottom-center' class="square v"><%= board[7] %></td>
-        <td id='bottom-right' class="square"><%= board[8] %></td>
-    </tr>
-</table>
+
+

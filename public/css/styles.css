@@ -7,6 +7,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased;
+	text-align: center;
 }
 li {
 	list-style: none;
@@ -63,6 +64,25 @@ input::-moz-focus-inner {
 	outline: none;
 	font-size: 40px;
 	border: none;
+}
+.select {
+	margin-top: 20px;
+}
+.reset {
+	text-decoration: none;
+	transition: all 500ms ease-in-out;
+	border: 1px solid;
+	padding: 5px;
+	color: #000000;
+	font-size: 18px;
+}
+.reset:hover {
+	text-decoration: none;
+	background: #000000;
+	color: #ffffff;
+}
+.options li {
+	padding: 5px;
 }
 
 /*footer*/

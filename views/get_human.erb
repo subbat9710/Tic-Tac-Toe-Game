@@ -1,22 +1,28 @@
-<h3><%= game_msg %></h3> 
-
-<h3>Click on the untaken spot you want to mark</h3> 
-<form action="get_human_move" method="post">
-    <table id='board'>
-        <tr id="row1">
-            <td class="square"><input class="square tinput" type='submit' name="move[0]" value='<%= board[0] %>'></td>
-            <td class="square v"><input class="square tinput" type='submit' name="move[1]" value='<%= board[1]%>'></td>
-            <td class="square"><input class="square tinput" type='submit' name="move[2]" value='<%= board[2] %>'></td>
-        </tr>
-        <tr id="row2">
-            <td class="square h"><input class="square tinput" type='submit' name="move[3]" value='<%= board[3] %>'></td>
-            <td class="square v h"><input class="square tinput" type='submit' name="move[4]" value='<%= board[4] %>'></td>
-            <td class="square h"><input class="square tinput" type='submit' name="move[5]" value='<%= board[5] %>'></td>
-        </tr>
-        <tr id="row3">
-            <td class="square"><input class="square tinput" type='submit' name="move[6]" value='<%= board[6] %>'></td>
-            <td class="square v"><input class="square tinput" type="submit" name="move[7]" value='<%= board[7] %>'></td>
-            <td class="square"><input class="square tinput" type="submit" name="move[8]" value='<%= board[8] %>'></td>
-        </tr>
-    </table>
-</form>
+<!DOCTYPE html>
+<html>
+    <body>
+    <!-- <h3>Click on the untaken spot you want to mark</h3>  -->
+        <form action="get_human_move" method="post">
+            <table id='board'>
+                <tr id="row1">
+                    <td class="square"><input class="square tinput" type='submit' name="move[0]" value='<%= board[0] %>'></td>
+                    <td class="square v"><input class="square tinput" type='submit' name="move[1]" value='<%= board[1]%>'></td>
+                    <td class="square"><input class="square tinput" type='submit' name="move[2]" value='<%= board[2] %>'></td>
+                </tr>
+                <tr id="row2">
+                    <td class="square h"><input class="square tinput" type='submit' name="move[3]" value='<%= board[3] %>'></td>
+                    <td class="square v h"><input class="square tinput" type='submit' name="move[4]" value='<%= board[4] %>'></td>
+                    <td class="square h"><input class="square tinput" type='submit' name="move[5]" value='<%= board[5] %>'></td>
+                </tr>
+                <tr id="row3">
+                    <td class="square"><input class="square tinput" type='submit' name="move[6]" value='<%= board[6] %>'></td>
+                    <td class="square v"><input class="square tinput" type="submit" name="move[7]" value='<%= board[7] %>'></td>
+                    <td class="square"><input class="square tinput" type="submit" name="move[8]" value='<%= board[8] %>'></td>
+                </tr>
+            </table>
+        </form>
+        <div>
+           <!--  <h3><%= game_msg %></h3> -->
+        </div>
+    </body>
+</html> 
