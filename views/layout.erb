@@ -25,8 +25,13 @@
                         <h1 class ="topic">Wellcome To TicTacToe</h1><hr>
                     </div>
                 </div>
-            </div>
         <!--End Header -->
+            <div class="rules" id="rules">
+              <ul class="list-inline">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="The object of Tic Tac Toe is to get three in a row. You play on a three by three game board. The first player is known as X and the second is O. Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares are filled. X always goes first, and in the event that no one has three in a row, the stalemate is called a cat game.">Game Rules</a>
+            </ul>
+         </div>
+         </div>
             <div id="options" class="options">
                 <div class="container">
                     <div>
@@ -55,5 +60,10 @@
                 new WOW().init();
             </script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function(){
+                    $('[data-toggle="tooltip"]').tooltip();   
+                });
+            </script>
         </body>
     </html>

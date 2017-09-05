@@ -31,7 +31,7 @@ h4 {
 .header {
 	position: relative;
 	padding: 30px 0 30px;
-	margin-top: 10px;
+	margin-top: 0px;
 	color: #000;
 	text-align: center;
 }
@@ -84,12 +84,20 @@ input::-moz-focus-inner {
 .options li {
 	padding: 5px;
 }
-
-/*footer*/
-.footer {
-	padding: 8px;
-	color: #cccccc;
-	background: #222222;
-	text-align: center;
-	margin-top: 10px;
+/*rules*/
+.rules a {
+	color: #000000;
+	text-decoration: none;
+	border: 2px solid #000000;
+	padding: 5px;
+	font-size: 15px;
 }
+.rules a:hover,
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+
+
+
+
