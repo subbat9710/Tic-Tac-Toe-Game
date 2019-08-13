@@ -17,9 +17,9 @@ a {
 	text-decoration: none;
 	transition: all 500ms ease-in-out;
 }
-.image {
+/*.image {
 	height: 100px;
-	width: 100px;
+	width: 100px;*/
 }
 a:hover,
 a:active {
