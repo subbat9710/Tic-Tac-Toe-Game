@@ -17,11 +17,15 @@ a {
 	text-decoration: none;
 	transition: all 500ms ease-in-out;
 }
+.image {
+	height: 100px;
+	width: 100px;
+}
 a:hover,
 a:active {
 	text-decoration: none;
 }
-h1,
+h1,          
 h4 {
 	font-family: 'PT Sans Narrow', Aerial, sans-serif;
 	text-transform: uppercase;
@@ -106,5 +110,4 @@ and (max-device-width : 1024px) {
  }
 
 
-
-
+ 
