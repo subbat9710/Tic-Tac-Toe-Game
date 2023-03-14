@@ -1,5 +1,5 @@
 # Tic Tac Toe Game
-##### This project is about creating a Tic Tac Toe game with four main features. First, it allows two human players to play against each other. Second, it allows a human player to play against a sequential (computer plays sequentially). This is also known as the easy game. Third, it allows a human player to play against a random player (computer plays randomly). This is also known as the medium game. Finally, it allows a human player to play against an unbeatable computer player. This is also known as the hard game.
+This project is about creating a Tic Tac Toe game with four main features. First, it allows two human players to play against each other. Second, it allows a human player to play against a sequential (computer plays sequentially). This is also known as the easy game. Third, it allows a human player to play against a random player (computer plays randomly). This is also known as the medium game. Finally, it allows a human player to play against an unbeatable computer player. This is also known as the hard game.
 
 ### Setting up Tic Tac Toe Game
 The Tic Tac Toe game is set up by following these five steps:
