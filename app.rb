@@ -110,7 +110,7 @@ enable :sessions
     get "/display_result" do 
         if session[:board].stub_winner?
             #puts "wins"
-            game_msg = "\tWow! #{session[:currentplayer].name}(#{session[:currentplayer].marker})WINS ^_^"
+            game_msg = "\tWow! #{session[:currentplayer].name}(#{session[:currentplayer].marker})WINS"
         erb :display_win, :locals => {:game_msg => game_msg, :board => session[:board].board}
         else session[:board].tie
     	    game_msg = "\tDRAW!, Try Again"

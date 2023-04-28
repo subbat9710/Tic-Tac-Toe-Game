@@ -54,7 +54,7 @@ class Unbeatable
 			            [board.board[2], board.board[5], board.board[8]],
 			            [board.board[0], board.board[4], board.board[8]],
 			            [board.board[2], board.board[4], board.board[6]]
-		                   ]
+		            ]
 	end
     
     def create_fork(board, currentplayer)

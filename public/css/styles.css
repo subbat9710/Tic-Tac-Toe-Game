@@ -8,6 +8,8 @@ body {
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased;
 	text-align: center;
+	background-color: #F9F9F9;
+    font-family: Arial, sans-serif;
 }
 li {
 	list-style: none;
@@ -17,10 +19,71 @@ a {
 	text-decoration: none;
 	transition: all 500ms ease-in-out;
 }
+#board {
+	border-collapse: collapse;
+	margin: auto;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+td.square {
+    width: 120px;
+    height: 120px;
+    font-size: 80px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid #ccc;
+}
+td.square.x {
+    color: #E91E63;
+}
+.x-player {
+	color: #E91E63;
+	font-size: 80px;
+    text-align: center;
+}
+tr#row2 td.square.v {
+    border-left: none;
+    border-right: none;
+}
+tr#row2 td.square.h {
+    border-top: none;
+    border-bottom: none;
+}
+p {
+    font-size: 18px;
+    text-align: center;
+}
+.square:hover {
+	background-color: #f2f2f2;
+}
+
+.v {
+	border-left: none;
+	border-right: none;
+}
+
+.h {
+	border-top: none;
+	border-bottom: none;
+}
+
+  /* Style for the game message */
+h3 {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+}
 /*.image {
 	height: 100px;
 	width: 100px;*/
-}
 a:hover,
 a:active {
 	text-decoration: none;
@@ -34,7 +97,6 @@ h4 {
 /*header*/
 .header {
 	position: relative;
-	padding: 30px 0 30px;
 	margin-top: 0px;
 	color: #000;
 	text-align: center;
@@ -66,7 +128,7 @@ input::-moz-focus-inner {
 .tinput {
 	background: rgba(0,0,0,0);
 	outline: none;
-	font-size: 40px;
+	font-size: 80px;
 	border: none;
 }
 .select {

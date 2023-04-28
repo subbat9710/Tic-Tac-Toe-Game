@@ -6,18 +6,18 @@
 
 <table id='board'>
     <tr id="row1">
-        <td class="square"><%= board[0] %></td>
-        <td class="square v"><%= board[1] %></td>
-        <td class="square"><%= board[2] %></td>
+        <td class="square <%= board[0] == 'X' ? 'x' : '' %>"><%= board[0] %></td>
+        <td class="square v <%= board[1] == 'X' ? 'x' : '' %>"><%= board[1] %></td>
+        <td class="square <%= board[2] == 'X' ? 'x' : '' %>"><%= board[2] %></td>
     </tr>
     <tr id="row2">
-        <td class="square h"><%= board[3] %></td>
-        <td class="square v h"><%= board[4] %></td>
-        <td class="square h"><%= board[5] %></td>
+        <td class="square h <%= board[3] == 'X' ? 'x' : '' %>"><%= board[3] %></td>
+        <td class="square v h <%= board[4] == 'X' ? 'x' : '' %>"><%= board[4] %></td>
+        <td class="square h <%= board[5] == 'X' ? 'x' : '' %>"><%= board[5] %></td>
     </tr>
     <tr id="row3">
-        <td class="square"><%= board[6] %></td>
-        <td class="square v"><%= board[7] %></td>
-        <td class="square"><%= board[8] %></td>
+        <td class="square <%= board[6] == 'X' ? 'x' : '' %>"><%= board[6] %></td>
+        <td class="square v <%= board[7] == 'X' ? 'x' : '' %>"><%= board[7] %></td>
+        <td class="square <%= board[8] == 'X' ? 'x' : '' %>"><%= board[8] %></td>
     </tr>
 </table>
