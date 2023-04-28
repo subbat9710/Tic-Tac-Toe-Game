@@ -8,11 +8,6 @@ Gem::Specification.new do |spec|
     spec.homepage      = "https://github.com/subbat9710/Tic-Tac-Toe-Game"
     spec.license       = "MIT"
   
-    spec.files         = Dir["lib/**/*.rb", "bin/*"]
-    spec.require_paths = ["lib"]
-  
-    spec.add_dependency "some_other_gem", "~> 1.0"
-  
     spec.metadata = {
       "foo" => "bar",
       "baz" => "qux"
