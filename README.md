@@ -1,3 +1,4 @@
+![tictactoegame](https://user-images.githubusercontent.com/25064570/235260651-11a3c299-8e2f-40fd-b132-d2e1c5fe1d7a.png)
 # Tic Tac Toe Game
 This project is about creating a Tic Tac Toe game with four main features. First, it allows two human players to play against each other. Second, it allows a human player to play against a sequential (computer plays sequentially). This is also known as the easy game. Third, it allows a human player to play against a random player (computer plays randomly). This is also known as the medium game. Finally, it allows a human player to play against an unbeatable computer player. This is also known as the hard game.
 
