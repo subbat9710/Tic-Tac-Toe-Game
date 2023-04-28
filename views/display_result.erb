@@ -18,9 +18,8 @@
         <td class="square <%= board[8] == 'X' ? 'x' : board[8] == 'O' ? 'o' : '' %>"><%= board[8] %></td>
       </tr>
     </table>
-    <hr />
     <div>
-      <p><%= game_msg %></p>
+      <p id="message"><%= game_msg %></p>
     </div>
   </body>
 </html>

@@ -29,23 +29,46 @@ table {
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
+input[type="submit"] {
+	border: none;
+	background-color: transparent;
+	font-size: inherit;
+	font-weight: inherit;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+input[type="submit"]:hover {
+	background-color: #f0f0f0;
+  }
 td.square {
     width: 120px;
     height: 120px;
-    font-size: 80px;
+    font-size: 60px;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: 1px solid #ccc;
 }
+td {
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	font-size: 24px;
+	font-weight: bold;
+}
 td.square.x {
-    color: #E91E63;
+    color: #ff6347;
+	font-weight: bold;
 }
 .x-player {
-	color: #E91E63;
-	font-size: 80px;
+	color: #ff6347;
+	font-size: 60px;
     text-align: center;
+	font-weight: bold;
 }
 tr#row2 td.square.v {
     border-left: none;
@@ -72,7 +95,6 @@ p {
 	border-top: none;
 	border-bottom: none;
 }
-
   /* Style for the game message */
 h3 {
 	text-align: center;
@@ -81,9 +103,7 @@ h3 {
 	font-weight: bold;
 	color: #333;
 }
-/*.image {
-	height: 100px;
-	width: 100px;*/
+
 a:hover,
 a:active {
 	text-decoration: none;
@@ -138,9 +158,10 @@ input::-moz-focus-inner {
 	text-decoration: none;
 	transition: all 500ms ease-in-out;
 	border: 1px solid;
-	padding: 5px;
-	color: #000000;
-	font-size: 18px;
+	padding: 9px;
+	color: #070101;
+	font-size: 14px;
+	background-color: #42c2ad;
 }
 .reset:hover {
 	text-decoration: none;
@@ -162,6 +183,27 @@ input::-moz-focus-inner {
 a:active {
 	text-decoration: none;
 	color: #000000;
+}
+#pp {
+	background-color: #246d11;
+	color: #f3eaea;
+}
+#ps {
+	background-color: #1b0ce4;
+	color: #ebdddd;
+}
+#pr {
+	background-color: #691591;
+	color: #e4d9d9;
+}
+#pu {
+	background-color: #cc142c;
+	color: #e9dddd;
+}
+#message {
+	color: rgb(87, 22, 172);
+	margin: 10px;
+	font-weight: bold;
 }
 @media only screen 
 and (min-device-width : 768px) 
