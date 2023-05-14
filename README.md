@@ -9,7 +9,7 @@ The Tic Tac Toe game is set up by following these five steps:
 2. Set positions (also mark position)
 3. Check whether the position is empty or full
 4. Check whether the board is full or not
-5. If the board is full, check for the winner, loser, and tie
+5. If the board is full, check for the winner, loser and tie
 
 ## Running the app
 To run the app, try $ ruby app.rb in your terminal. rackup is required to load on port 4567 (for Mac).
